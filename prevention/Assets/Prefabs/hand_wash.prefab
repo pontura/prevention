@@ -24291,8 +24291,9 @@ GameObject:
   m_Component:
   - component: {fileID: 358099081032575430}
   - component: {fileID: 358099081032575429}
+  - component: {fileID: 28759448}
   m_Layer: 0
-  m_Name: finger
+  m_Name: soapOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24311,7 +24312,7 @@ Transform:
   m_Children:
   - {fileID: 358099082592740562}
   m_Father: {fileID: 358099082814118385}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &358099081032575429
 SpriteRenderer:
@@ -24362,6 +24363,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &28759448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358099081032575431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 142c96856a31a7b419c9c8f6f7c0b71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameWashing: {fileID: 1549430061}
+  hand1: {fileID: 358099083025093843}
+  hand2: {fileID: 358099081409350173}
+  hand1b: {fileID: 358099082444566767}
+  hand2b: {fileID: 358099081979077104}
+  distance_to_hand: 1
+  items: {fileID: 0}
+  lastPos: {x: 0, y: 0}
+  timerCheck: 0.05
+  distanceToCheck: 0.1
 --- !u!1 &358099081032615120
 GameObject:
   m_ObjectHideFlags: 0
@@ -24584,7 +24607,7 @@ Transform:
   m_Children:
   - {fileID: 358099081833071833}
   m_Father: {fileID: 358099082814118385}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &358099081381289963
 SpriteRenderer:
@@ -35827,6 +35850,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 358099082814118385}
+  - component: {fileID: 162910996250124987}
   m_Layer: 0
   m_Name: soap
   m_TagString: Untagged
@@ -35845,11 +35869,27 @@ Transform:
   m_LocalPosition: {x: -3.58, y: 3.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 358099081381289964}
   - {fileID: 358099081032575430}
+  - {fileID: 358099081381289964}
   m_Father: {fileID: 358099082905255646}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &162910996250124987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358099082814118386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a4cfa9333a68045914ec65ff82bb25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: soap
+  item_idle: {fileID: 358099081381289965}
+  item_drag: {fileID: 358099081032575431}
+  isOn: 0
 --- !u!1 &358099082905255647
 GameObject:
   m_ObjectHideFlags: 0
@@ -35860,6 +35900,7 @@ GameObject:
   m_Component:
   - component: {fileID: 358099082905255646}
   - component: {fileID: 4347851071650911201}
+  - component: {fileID: 1549430061}
   m_Layer: 0
   m_Name: hand_wash
   m_TagString: Untagged
@@ -35910,6 +35951,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1549430061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358099082905255647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2de2ad2ab184b3469a83c6783eb37f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  state: 0
 --- !u!1 &358099082922792213
 GameObject:
   m_ObjectHideFlags: 0
@@ -39879,6 +39934,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 779965636070191809}
+  - component: {fileID: 45199844}
   m_Layer: 0
   m_Name: dirt2
   m_TagString: Untagged
@@ -39927,6 +39983,19 @@ Transform:
   m_Father: {fileID: 358099081979077007}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &45199844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4835030148332303698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59498d3349a5d394c8b6fbb4d400f456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  all: []
 --- !u!1 &4837549661653148599
 GameObject:
   m_ObjectHideFlags: 0
@@ -41536,6 +41605,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7308827959011343581}
+  - component: {fileID: 1237248734}
   m_Layer: 0
   m_Name: dirt1
   m_TagString: Untagged
@@ -41584,6 +41654,19 @@ Transform:
   m_Father: {fileID: 358099082444566766}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1237248734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6456496557035410450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59498d3349a5d394c8b6fbb4d400f456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  all: []
 --- !u!1 &6732004210637678066
 GameObject:
   m_ObjectHideFlags: 0
@@ -41593,6 +41676,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1920861481900824750}
+  - component: {fileID: 2066913798}
   m_Layer: 0
   m_Name: dirt2
   m_TagString: Untagged
@@ -41637,6 +41721,19 @@ Transform:
   m_Father: {fileID: 358099081409350172}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2066913798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6732004210637678066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59498d3349a5d394c8b6fbb4d400f456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  all: []
 --- !u!1 &6793823371524090160
 GameObject:
   m_ObjectHideFlags: 0
@@ -43166,6 +43263,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5245093819966292265}
+  - component: {fileID: 2091410734}
   m_Layer: 0
   m_Name: dirt1
   m_TagString: Untagged
@@ -43211,6 +43309,19 @@ Transform:
   m_Father: {fileID: 358099083025093842}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2091410734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8355533563911335939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59498d3349a5d394c8b6fbb4d400f456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  all: []
 --- !u!1 &8383794523407360690
 GameObject:
   m_ObjectHideFlags: 0

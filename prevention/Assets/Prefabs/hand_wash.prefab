@@ -43449,8 +43449,8 @@ MonoBehaviour:
   distance_to_hand: 1
   items: {fileID: 0}
   lastPos: {x: 0, y: 0}
-  timerCheck: 0.05
-  distanceToCheck: 0.1
+  timerCheck: 0.2
+  distanceToCheck: 0.22
 --- !u!1 &358099081032615120
 GameObject:
   m_ObjectHideFlags: 0
@@ -55034,6 +55034,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   state: 0
+  totalSteps: 0
+  step: 0
 --- !u!1 &358099082922792213
 GameObject:
   m_ObjectHideFlags: 0

@@ -43449,7 +43449,7 @@ MonoBehaviour:
   distance_to_hand: 1
   items: {fileID: 0}
   lastPos: {x: 0, y: 0}
-  timerCheck: 0.2
+  timerCheck: 0.025
   distanceToCheck: 0.22
 --- !u!1 &358099081032615120
 GameObject:
@@ -55032,6 +55032,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2de2ad2ab184b3469a83c6783eb37f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameSettings:
+  - state: 1
+    duration: 15
+  - state: 2
+    duration: 15
+  - state: 4
+    duration: 15
+  - state: 6
+    duration: 15
+  - state: 8
+    duration: 15
+  - state: 10
+    duration: 15
+  - state: 12
+    duration: 15
+  - state: 14
+    duration: 15
+  - state: 16
+    duration: 15
   id: 0
   state: 0
   totalSteps: 0

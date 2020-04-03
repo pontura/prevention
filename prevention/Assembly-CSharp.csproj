@@ -63,7 +63,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\ButtonCustom.cs" />
+    <Compile Include="Assets\Cutscene.cs" />
+    <Compile Include="Assets\CutscenesManager.cs" />
     <Compile Include="Assets\Data.cs" />
+    <Compile Include="Assets\DemoScene.cs" />
     <Compile Include="Assets\DraggerManager.cs" />
     <Compile Include="Assets\Events.cs" />
     <Compile Include="Assets\Game.cs" />
@@ -74,6 +77,8 @@
     <Compile Include="Assets\ItemSoap.cs" />
     <Compile Include="Assets\MainCamera.cs" />
     <Compile Include="Assets\Settings.cs" />
+    <Compile Include="Assets\Timeline.cs" />
+    <Compile Include="Assets\Utils.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/projects/prevention/git/prevention/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

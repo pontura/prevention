@@ -63,7 +63,6 @@ public class ItemSoap : MonoBehaviour
     }
     private void Over(GameObject go)
     {
-        print("over: " + go.name);
         items = go.GetComponentInChildren<ItemsListDestroyer>();       
     }
 }

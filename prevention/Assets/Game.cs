@@ -23,4 +23,8 @@ public class Game : MonoBehaviour
         if (!mInstance)
             mInstance = this;
     }
+    public void Replay()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Done");
+    }
 }

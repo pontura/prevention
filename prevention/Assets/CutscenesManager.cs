@@ -7,7 +7,7 @@ public class CutscenesManager : MonoBehaviour
     public List<Cutscene> all;
     public Transform container;
 
-    void Start()
+    void Awake()
     {
         Events.OnCutscene += OnCutscene;
     }

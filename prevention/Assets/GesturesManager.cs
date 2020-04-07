@@ -9,7 +9,9 @@ public class GesturesManager : MonoBehaviour
     {
         NONE,
         SLIDE_VERTICAL,
-        SLIDE_HORIZONTAL
+        SLIDE_HORIZONTAL,
+        SLIDE_CURVE_LEFT,
+        SLIDE_CURVE_RIGHT
     }
 
     public verticalTypes verticalType;

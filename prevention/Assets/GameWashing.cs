@@ -4,14 +4,15 @@ using UnityEngine;
 using System;
 public class GameWashing : MonoBehaviour
 {
-
+    public states forceState;
     public List<GameSettings> gameSettings;
-
+    SlidersManager sliderManager;
     [Serializable]
     public class GameSettings
     {
         public states state;
         public float duration;
+        public GesturesManager.types gestureType;
     }
     Animator anim;
     
@@ -40,11 +41,18 @@ public class GameWashing : MonoBehaviour
     }
     void Start()
     {
+        sliderManager = Game.Instance.slidersManager;
         anim = GetComponent<Animator>();        
         Events.ItemsListDestroyerDone += ItemsListDestroyerDone;
         Events.OnGestureVertical += OnGestureVertical;
         Events.OnGestureHorizontal += OnGestureHorizontal;
         Events.OnTimeout += OnTimeout;
+        Events.SliderScore += SliderScore;
+        if (forceState != states.INTRO)
+        {
+            state = forceState;
+            Done();
+        } else
         Events.OnCutscene(Cutscene.types.SOAP, Cutscene.parts.INTRO, OnCutsceneDone);
     }
     void OnDestroy()
@@ -53,6 +61,7 @@ public class GameWashing : MonoBehaviour
         Events.OnGestureVertical -= OnGestureVertical;
         Events.OnGestureHorizontal -= OnGestureHorizontal;
         Events.OnTimeout -= OnTimeout;
+        Events.SliderScore -= SliderScore;
     }
     void OnTimeout()
     {
@@ -88,6 +97,8 @@ public class GameWashing : MonoBehaviour
     }
     void Done()
     {
+        Events.OnActiveDrag(false, "soap");
+        Events.OnGestureActive(GesturesManager.types.NONE, false);
         Events.OnDrag(false, "soap");
         print("Game ready state:  " + state);
         switch (state)
@@ -143,10 +154,10 @@ public class GameWashing : MonoBehaviour
                 StartCoroutine(ChangeState(states.GAME1, 4));
                 break;
             case states.GAME1:
-                Events.OnCutscene(Cutscene.types.SOAP2, Cutscene.parts.INTRO, OnCutsceneDone);
-                state = states.GAME2;
-                break;
-            case states.GAME2:
+            //    OnCutsceneDone(); //Events.OnCutscene(Cutscene.types.SOAP2, Cutscene.parts.INTRO, OnCutsceneDone);
+            //    state = states.GAME2;
+            //    break;
+            //case states.GAME2:
                 StartCoroutine(ChangeState(states.GAME2, 0.5f));
                 anim.Play("handwash1_rotation");
                 break;
@@ -176,22 +187,24 @@ public class GameWashing : MonoBehaviour
            
             case states.GAME1:
                 SetTotalValues(12);
+                Events.OnActiveDrag(true, "soap");
                 Events.OnTimeInit(GetSettings(state).duration);
                 anim.Play("handwash1_idle");
                 break;
             case states.GAME2:
+                Events.OnActiveDrag(true, "soap");
                 SetTotalValues(12);
                 Events.OnTimeInit(GetSettings(state).duration);
                 break;
             case states.VERTICAL1:
-                SetTotalValues(12);
+                SetTotalValues(4);
                 Events.OnTimeInit(GetSettings(state).duration);
-                Events.OnGestureActive(GesturesManager.types.SLIDE_VERTICAL, true);
+                Events.OnGestureActive(GesturesManager.types.SLIDE_CURVE_LEFT, true);
                 break;
             case states.VERTICAL2:
-                SetTotalValues(12);
+                SetTotalValues(4);
                 Events.OnTimeInit(GetSettings(state).duration);
-                Events.OnGestureActive(GesturesManager.types.SLIDE_VERTICAL, true);
+                Events.OnGestureActive(GesturesManager.types.SLIDE_CURVE_RIGHT, true);
                 break;
             case states.CIRCULOS:
                 SetTotalValues(12);
@@ -217,7 +230,6 @@ public class GameWashing : MonoBehaviour
                 break;
             case states.PUNIO1_INTRO:
                 SetTotalValues(12);
-                Events.OnGestureActive(GesturesManager.types.SLIDE_VERTICAL, false);
                 anim.Play("handwash5_intro");
               //  Invoke("ChangeState", 1.6f);
                 break;
@@ -226,7 +238,6 @@ public class GameWashing : MonoBehaviour
                 break;
             case states.PUNIO2_INTRO:
                 SetTotalValues(12);
-                Events.OnGestureActive(GesturesManager.types.SLIDE_HORIZONTAL, false);
                 anim.Play("handwash5_transition1");
                // Invoke("ChangeState", 1);
                 break;
@@ -235,8 +246,6 @@ public class GameWashing : MonoBehaviour
                 break;
             case states.OUTRO:
                 SetTotalValues(1000);
-                Events.OnGestureActive(GesturesManager.types.SLIDE_VERTICAL, false);
-                Events.OnGestureActive(GesturesManager.types.SLIDE_HORIZONTAL, false);
                 anim.Play("outro");
              //   Invoke("ChangeState", 9);
                 break;
@@ -266,22 +275,23 @@ public class GameWashing : MonoBehaviour
     void OnGestureVertical(GesturesManager.verticalTypes type)
     {
         step++;
-        if (state == states.VERTICAL1)
-        {
+        //if (state == states.VERTICAL1)
+        //{
             
-            if (type == GesturesManager.verticalTypes.UP)
-                anim.Play("handwash2_step1_a");
-            else if (type == GesturesManager.verticalTypes.DOWN)
-                anim.Play("handwash2_step1_b");
-        }
-        else if (state == states.VERTICAL2)
-        {
-            if (type == GesturesManager.verticalTypes.UP)
-                anim.Play("handwash2_step2_a");
-            else if (type == GesturesManager.verticalTypes.DOWN)
-                anim.Play("handwash2_step2_b");
-        }
-        else if (state == states.CIRCULOS)
+        //    if (type == GesturesManager.verticalTypes.UP)
+        //        anim.Play("handwash2_step1_a");
+        //    else if (type == GesturesManager.verticalTypes.DOWN)
+        //        anim.Play("handwash2_step1_b");
+        //}
+        //else if (state == states.VERTICAL2)
+        //{
+        //    if (type == GesturesManager.verticalTypes.UP)
+        //        anim.Play("handwash2_step2_a");
+        //    else if (type == GesturesManager.verticalTypes.DOWN)
+        //        anim.Play("handwash2_step2_b");
+        //}
+        //else 
+        if (state == states.CIRCULOS)
         {
             if (type == GesturesManager.verticalTypes.UP)
                 anim.Play("handwash3_a");
@@ -317,5 +327,24 @@ public class GameWashing : MonoBehaviour
         if (step > totalSteps)
             Done();
     }
-    
+    private void Update()
+    {
+        if (!sliderManager.isActive)
+            return;
+        if (sliderManager.isPlaying)
+            anim.speed = 1;
+        else
+            anim.speed = 0;
+  
+    }
+    void SliderScore()
+    {
+        step++;
+        print("SliderScore step: " + step);
+        if (state == states.VERTICAL1 || state == states.VERTICAL2)
+        {
+            if (step >= totalSteps)
+                Done();
+        }
+    }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ItemDraggerManager : MonoBehaviour
 {
+    public bool canBeDragged;
     public string itemName;
     public GameObject item_idle;
     public GameObject item_drag;
@@ -12,23 +13,42 @@ public class ItemDraggerManager : MonoBehaviour
 
     void Start()
     {
+        Events.OnActiveDrag += OnActiveDrag;
         Events.OnDrag += OnDrag;
     }
     void OnDestroy()
     {
+        Events.OnActiveDrag -= OnActiveDrag;
         Events.OnDrag -= OnDrag;
     }
-    void OnDrag(bool _isOn, string _itemName)
+    void OnActiveDrag(bool _canBeDragged, string _itemName)
     {
         if (itemName != _itemName)
             return;
+        canBeDragged = _canBeDragged;
+
+        if(!canBeDragged)
+            SetState(false);
+    }
+    void OnDrag(bool _isOn, string _itemName)
+    {
+        if (!canBeDragged)
+            return;
+        if (itemName != _itemName)
+            return;
         this.isOn = _isOn;
-        if (isOn)
-        {
+        if(isOn)
             parentPosition = item_drag.transform.parent.localPosition;
+        SetState(isOn);
+    }
+    void SetState(bool isOn)
+    {
+        if (isOn)
+        {           
             item_idle.SetActive(false);
             item_drag.SetActive(true);
-        } else
+        }
+        else
         {
             item_idle.SetActive(true);
             item_drag.SetActive(false);

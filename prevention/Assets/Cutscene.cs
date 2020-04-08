@@ -10,6 +10,7 @@ public class Cutscene : MonoBehaviour
 
     public enum types
     {
+        NONE,
         SOAP,
         SOAP2,
         THUMBS1,
@@ -17,6 +18,9 @@ public class Cutscene : MonoBehaviour
         CIRCLES,
         NAILS1,
         NAILS2,
+        PULGAR1,
+        PULGAR2,
+        OUTRO
     }
     public enum parts
     {

@@ -25,6 +25,8 @@ public class CutscenesManager : MonoBehaviour
             if (c.type == type && c.part == part)
                 cutscene_to_add = c;
         }
+        if (cutscene_to_add == null)
+            Debug.LogError("No hay cutscene de : " + type + " " + part + " " + action);
         Cutscene cutscene = Instantiate(cutscene_to_add);
         cutscene.transform.SetParent(container);
         cutscene.transform.localPosition = Vector3.zero;

@@ -4,14 +4,20 @@ using UnityEngine;
 using System;
 public class GameWashing : MonoBehaviour
 {
-
+    int id = 0;
+    public states forceState;
     public List<GameSettings> gameSettings;
-
+    SlidersManager sliderManager;
     [Serializable]
     public class GameSettings
     {
         public states state;
-        public float duration;
+        public Cutscene.types cutscene;
+        public int gameDuration;
+        public int score;
+        public GesturesManager.types gestureType;
+        public AnimationClip introClip;
+        public AnimationClip idleClip;
     }
     Animator anim;
     
@@ -23,228 +29,123 @@ public class GameWashing : MonoBehaviour
         GAME2,
         VERTICAL1_INTRO,
         VERTICAL1,
-        VERTICAL2_INTRO,
         VERTICAL2,
         CIRCULOS_INTRO,
         CIRCULOS,
         PULGAR1_INTRO,
         PULGAR1,
-        PULGAR2_INTRO,
         PULGAR2,
         PUNIO1_INTRO,
         PUNIO1,
-        PUNIO2_INTRO,
         PUNIO2,
         OUTRO,
         EXIT
     }
+    public GameSettings actualGameSettings;
     void Start()
     {
+        sliderManager = Game.Instance.slidersManager;
         anim = GetComponent<Animator>();        
         Events.ItemsListDestroyerDone += ItemsListDestroyerDone;
-        Events.OnGestureVertical += OnGestureVertical;
-        Events.OnGestureHorizontal += OnGestureHorizontal;
+       // Events.OnGestureVertical += OnGestureVertical;
+      //  Events.OnGestureHorizontal += OnGestureHorizontal;
         Events.OnTimeout += OnTimeout;
-        Events.OnCutscene(Cutscene.types.SOAP, Cutscene.parts.INTRO, OnCutsceneDone);
+        Events.SliderScore += SliderScore;
+#if UNITY_EDITOR
+        if (forceState != states.INTRO)
+            id = (int)forceState;
+#endif
+        IntoCutscene();
     }
     void OnDestroy()
     {
         Events.ItemsListDestroyerDone -= ItemsListDestroyerDone;
-        Events.OnGestureVertical -= OnGestureVertical;
-        Events.OnGestureHorizontal -= OnGestureHorizontal;
+      //  Events.OnGestureVertical -= OnGestureVertical;
+      //  Events.OnGestureHorizontal -= OnGestureHorizontal;
         Events.OnTimeout -= OnTimeout;
+        Events.SliderScore -= SliderScore;
+    }
+    void IntoCutscene()
+    {
+        actualGameSettings = GetSettings();
+        state = actualGameSettings.state;
+        if (actualGameSettings.gestureType == GesturesManager.types.NONE)
+            Events.OnCutscene(actualGameSettings.cutscene, Cutscene.parts.INTRO, NextState);
+    }
+    void NextState()
+    {       
+        id++;
+        actualGameSettings = GetSettings();        
+        state = actualGameSettings.state;
+
+        print("Next state " + state);
+        if (actualGameSettings.introClip != null)
+        {
+            anim.Play(actualGameSettings.introClip.name);
+            StartCoroutine(StartPlaying(actualGameSettings.introClip.averageDuration));
+        }
+        else if (actualGameSettings.gestureType == GesturesManager.types.NONE)
+            IntoCutscene();
+        else
+        {
+            print(state + " intro clip: " + actualGameSettings.introClip);
+            StartPlaying(actualGameSettings.introClip.averageDuration);
+        }
+    }
+    IEnumerator StartPlaying(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        StartPlaying();
+    }
+    void StartPlaying()
+    {
+        print("StartPlaying " + actualGameSettings.state);
+
+        SetTotalValues(actualGameSettings.score);
+        Events.OnTimeInit(actualGameSettings.gameDuration);
+
+        if(actualGameSettings.idleClip)
+            anim.Play(actualGameSettings.idleClip.name);
+
+        switch (actualGameSettings.gestureType)
+        {
+            case GesturesManager.types.DRAG:
+                Events.OnActiveDrag(true, "soap");
+                Events.OnDrag(false, "soap");
+                break;
+            default:
+                Events.OnGestureActive(actualGameSettings.gestureType, true);
+                break;
+        }
+
     }
     void OnTimeout()
     {
-        GameSettings gameSettings = GetSettings(state);
-        Cutscene.types cutsceneType = Cutscene.types.SOAP;
-        switch (state)
-        {
-            case states.GAME1:
-                cutsceneType = Cutscene.types.SOAP;
-                break;
-            case states.GAME2:
-                cutsceneType = Cutscene.types.SOAP2;
-                break;
-            case states.VERTICAL1:
-                cutsceneType = Cutscene.types.THUMBS1;
-                break;
-            case states.VERTICAL2:
-                cutsceneType = Cutscene.types.THUMBS1;
-                break;
-        }
-        Events.OnCutscene(cutsceneType, Cutscene.parts.OUTRO_BAD, Game.Instance.Replay);
+        Events.OnCutscene(actualGameSettings.cutscene, Cutscene.parts.OUTRO_BAD, Game.Instance.Replay);
         Destroy(gameObject);
     }
-    GameSettings GetSettings(states state)
+    GameSettings GetSettings()
     {
         foreach (GameSettings gs in gameSettings)
         {
-            if (gs.state == state)
+            if ((int)gs.state == id)
                 return gs;
         }
         Debug.LogError("No hay un settings para " + state);
         return null;
     }
-    void Done()
+    private void OnGameDone()
     {
+        Events.OnActiveDrag(false, "soap");
+        Events.OnGestureActive(GesturesManager.types.NONE, false);
         Events.OnDrag(false, "soap");
-        print("Game ready state:  " + state);
-        switch (state)
-        {
-            case states.GAME1:
-                Events.OnCutscene(Cutscene.types.SOAP, Cutscene.parts.OUTRO_GOOD, OnCutsceneDone);
-                break;
-            case states.GAME2:
-                Events.OnCutscene(Cutscene.types.SOAP2, Cutscene.parts.OUTRO_GOOD, NextCutscene);
-                state = states.VERTICAL1_INTRO;
-                break;
-            case states.VERTICAL1:
-                Events.OnCutscene(Cutscene.types.THUMBS1, Cutscene.parts.OUTRO_GOOD, NextCutscene);
-                state = states.VERTICAL2_INTRO;
-                break;
-            case states.VERTICAL2:
-                Events.OnCutscene(Cutscene.types.THUMBS2, Cutscene.parts.OUTRO_GOOD, NextCutscene);
-                state = states.CIRCULOS_INTRO;
-                break;
-            case states.CIRCULOS:
-                Events.OnCutscene(Cutscene.types.CIRCLES, Cutscene.parts.OUTRO_GOOD, NextCutscene);
-                state = states.PULGAR1_INTRO;
-                break;
-            case states.PULGAR1_INTRO:
-                Game.Instance.Replay();
-                break;
-        }
         Events.OnGameDone();
     }
-    void NextCutscene()
+    void Done()
     {
-        print("NextCutscene:  " + state);
-        switch (state)
-        {
-            case states.VERTICAL1_INTRO:
-                Events.OnCutscene(Cutscene.types.THUMBS1, Cutscene.parts.INTRO, OnCutsceneDone);
-                break;
-            case states.VERTICAL2_INTRO:
-                Events.OnCutscene(Cutscene.types.THUMBS2, Cutscene.parts.INTRO, OnCutsceneDone);
-                break;
-            case states.CIRCULOS_INTRO:
-                Events.OnCutscene(Cutscene.types.CIRCLES, Cutscene.parts.INTRO, OnCutsceneDone);
-                break;
-        }
-    }
-    void OnCutsceneDone()
-    {
-        print(" OnCutsceneDone ___________ for state:  " + state);       
-        switch (state)
-        {
-            case states.INTRO:
-                anim.Play("intro");
-                StartCoroutine(ChangeState(states.GAME1, 4));
-                break;
-            case states.GAME1:
-                Events.OnCutscene(Cutscene.types.SOAP2, Cutscene.parts.INTRO, OnCutsceneDone);
-                state = states.GAME2;
-                break;
-            case states.GAME2:
-                StartCoroutine(ChangeState(states.GAME2, 0.5f));
-                anim.Play("handwash1_rotation");
-                break;
-            case states.VERTICAL1_INTRO:
-                anim.Play("handwash2_intro");
-                StartCoroutine(ChangeState(states.VERTICAL1, 1));
-                break;
-            case states.VERTICAL2_INTRO:
-                anim.Play("handwash2_transition1");
-                StartCoroutine(ChangeState(states.VERTICAL2, 0.7f));
-                break;
-            case states.CIRCULOS_INTRO:
-                anim.Play("handwash3_intro");
-                StartCoroutine(ChangeState(states.CIRCULOS, 0.7f));
-                break;
-
-        }        
-    }
-
-    IEnumerator ChangeState(states _state, float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        state = _state;
-        print("ChangeState state " +   state );
-        switch (state)
-        {
-           
-            case states.GAME1:
-                SetTotalValues(12);
-                Events.OnTimeInit(GetSettings(state).duration);
-                anim.Play("handwash1_idle");
-                break;
-            case states.GAME2:
-                SetTotalValues(12);
-                Events.OnTimeInit(GetSettings(state).duration);
-                break;
-            case states.VERTICAL1:
-                SetTotalValues(12);
-                Events.OnTimeInit(GetSettings(state).duration);
-                Events.OnGestureActive(GesturesManager.types.SLIDE_VERTICAL, true);
-                break;
-            case states.VERTICAL2:
-                SetTotalValues(12);
-                Events.OnTimeInit(GetSettings(state).duration);
-                Events.OnGestureActive(GesturesManager.types.SLIDE_VERTICAL, true);
-                break;
-            case states.CIRCULOS:
-                SetTotalValues(12);
-                Events.OnTimeInit(GetSettings(state).duration);
-                Events.OnGestureActive(GesturesManager.types.SLIDE_VERTICAL, true);
-                break;
-            //case states.PULGAR1_INTRO:
-            //    anim.Play("handwash4_intro");
-            //    Events.OnGestureActive(GesturesManager.types.SLIDE_VERTICAL, false);
-            //    break;
-            //case states.PULGAR1:
-            //    SetTotalValues(12);
-            //    Events.OnGestureActive(GesturesManager.types.SLIDE_VERTICAL, true);
-            //    break;
-            //case states.PULGAR2_INTRO:
-            //    SetTotalValues(12);
-            //    Events.OnGestureActive(GesturesManager.types.SLIDE_VERTICAL, false);
-            //    anim.Play("handwash4_transition1");
-               // Invoke("ChangeState", 1.6f);
-           //     break;
-            case states.PULGAR2:
-                Events.OnGestureActive(GesturesManager.types.SLIDE_VERTICAL, true);
-                break;
-            case states.PUNIO1_INTRO:
-                SetTotalValues(12);
-                Events.OnGestureActive(GesturesManager.types.SLIDE_VERTICAL, false);
-                anim.Play("handwash5_intro");
-              //  Invoke("ChangeState", 1.6f);
-                break;
-            case states.PUNIO1:
-                Events.OnGestureActive(GesturesManager.types.SLIDE_HORIZONTAL, true);
-                break;
-            case states.PUNIO2_INTRO:
-                SetTotalValues(12);
-                Events.OnGestureActive(GesturesManager.types.SLIDE_HORIZONTAL, false);
-                anim.Play("handwash5_transition1");
-               // Invoke("ChangeState", 1);
-                break;
-            case states.PUNIO2:
-                Events.OnGestureActive(GesturesManager.types.SLIDE_HORIZONTAL, true);
-                break;
-            case states.OUTRO:
-                SetTotalValues(1000);
-                Events.OnGestureActive(GesturesManager.types.SLIDE_VERTICAL, false);
-                Events.OnGestureActive(GesturesManager.types.SLIDE_HORIZONTAL, false);
-                anim.Play("outro");
-             //   Invoke("ChangeState", 9);
-                break;
-            case states.EXIT:
-                UnityEngine.SceneManagement.SceneManager.LoadScene("Done");
-                break;
-        }
-        
+        OnGameDone();
+        print("Game ready state:  " + state);
+        Events.OnCutscene(actualGameSettings.cutscene, Cutscene.parts.OUTRO_GOOD, NextState);        
     }
     void SetTotalValues(int _total)
     {
@@ -263,59 +164,74 @@ public class GameWashing : MonoBehaviour
     }
     public int totalSteps;
     public int step;
-    void OnGestureVertical(GesturesManager.verticalTypes type)
-    {
-        step++;
-        if (state == states.VERTICAL1)
-        {
+    //void OnGestureVertical(GesturesManager.verticalTypes type)
+    //{
+    //    step++;
+    //    //if (state == states.VERTICAL1)
+    //    //{
             
-            if (type == GesturesManager.verticalTypes.UP)
-                anim.Play("handwash2_step1_a");
-            else if (type == GesturesManager.verticalTypes.DOWN)
-                anim.Play("handwash2_step1_b");
-        }
-        else if (state == states.VERTICAL2)
-        {
-            if (type == GesturesManager.verticalTypes.UP)
-                anim.Play("handwash2_step2_a");
-            else if (type == GesturesManager.verticalTypes.DOWN)
-                anim.Play("handwash2_step2_b");
-        }
-        else if (state == states.CIRCULOS)
-        {
-            if (type == GesturesManager.verticalTypes.UP)
-                anim.Play("handwash3_a");
-            else if (type == GesturesManager.verticalTypes.DOWN)
-                anim.Play("handwash3_b");
-        }
-        else if (state == states.PULGAR1)
-        {
-            if (type == GesturesManager.verticalTypes.UP)
-                anim.CrossFade("handwash4_step1", 0.2f, 0, 0);
-        }
-        else if (state == states.PULGAR2)
-        {
-            if (type == GesturesManager.verticalTypes.UP)
-                anim.CrossFade("handwash4_step2", 0.2f, 0,  0);
-        }
-        if (step > totalSteps)
-            Done();
+    //    //    if (type == GesturesManager.verticalTypes.UP)
+    //    //        anim.Play("handwash2_step1_a");
+    //    //    else if (type == GesturesManager.verticalTypes.DOWN)
+    //    //        anim.Play("handwash2_step1_b");
+    //    //}
+    //    //else if (state == states.VERTICAL2)
+    //    //{
+    //    //    if (type == GesturesManager.verticalTypes.UP)
+    //    //        anim.Play("handwash2_step2_a");
+    //    //    else if (type == GesturesManager.verticalTypes.DOWN)
+    //    //        anim.Play("handwash2_step2_b");
+    //    //}
+    //    //else 
+    //    if (state == states.CIRCULOS)
+    //    {
+    //        if (type == GesturesManager.verticalTypes.UP)
+    //            anim.Play("handwash3_a");
+    //        else if (type == GesturesManager.verticalTypes.DOWN)
+    //            anim.Play("handwash3_b");
+    //    }
+    //    else if (state == states.PULGAR1)
+    //    {
+    //        if (type == GesturesManager.verticalTypes.UP)
+    //            anim.CrossFade("handwash4_step1", 0.2f, 0, 0);
+    //    }
+    //    else if (state == states.PULGAR2)
+    //    {
+    //        if (type == GesturesManager.verticalTypes.UP)
+    //            anim.CrossFade("handwash4_step2", 0.2f, 0,  0);
+    //    }
+    //    if (step > totalSteps)
+    //        Done();
+    //}
+    //void OnGestureHorizontal(GesturesManager.horizontalTypes type)
+    //{
+    //    step++;
+    //    if (state == states.PUNIO1)
+    //    {
+    //        if (type == GesturesManager.horizontalTypes.RIGHT)
+    //            anim.CrossFade("handwash5_step1", 0.2f, -1, 0);
+    //    }
+    //    else if (state == states.PUNIO2)
+    //    {
+    //        if (type == GesturesManager.horizontalTypes.RIGHT)
+    //            anim.CrossFade("handwash5_step2", 0.2f, -1, 0);
+    //    }
+    //    if (step > totalSteps)
+    //        Done();
+    //}
+    private void Update()
+    {
+        if (!sliderManager.isActive)
+            return;
+        if (sliderManager.isPlaying)
+            anim.speed = 1;
+        else
+            anim.speed = 0;
     }
-    void OnGestureHorizontal(GesturesManager.horizontalTypes type)
+    void SliderScore()
     {
         step++;
-        if (state == states.PUNIO1)
-        {
-            if (type == GesturesManager.horizontalTypes.RIGHT)
-                anim.CrossFade("handwash5_step1", 0.2f, -1, 0);
-        }
-        else if (state == states.PUNIO2)
-        {
-            if (type == GesturesManager.horizontalTypes.RIGHT)
-                anim.CrossFade("handwash5_step2", 0.2f, -1, 0);
-        }
-        if (step > totalSteps)
+        if (step >= totalSteps)
             Done();
     }
-    
 }

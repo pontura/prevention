@@ -54955,6 +54955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22a4cfa9333a68045914ec65ff82bb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBeDragged: 0
   itemName: soap
   item_idle: {fileID: 358099081381289965}
   item_drag: {fileID: 358099081032575431}
@@ -55032,27 +55033,115 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2de2ad2ab184b3469a83c6783eb37f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forceState: 6
   gameSettings:
+  - state: 0
+    cutscene: 1
+    gameDuration: 0
+    score: 0
+    gestureType: 0
+    introClip: {fileID: 0}
+    idleClip: {fileID: 0}
   - state: 1
-    duration: 15
+    cutscene: 1
+    gameDuration: 20
+    score: 4
+    gestureType: 1
+    introClip: {fileID: 7400000, guid: 3d1a695a9d6518b4e98d0c46d1e4484a, type: 2}
+    idleClip: {fileID: 7400000, guid: fa48daf5fb55ae34da66d378800131bf, type: 2}
   - state: 2
-    duration: 15
+    cutscene: 2
+    gameDuration: 18
+    score: 4
+    gestureType: 1
+    introClip: {fileID: 7400000, guid: 70125e6702cd7bb4faa4efba93878787, type: 2}
+    idleClip: {fileID: 0}
+  - state: 3
+    cutscene: 3
+    gameDuration: 0
+    score: 0
+    gestureType: 0
+    introClip: {fileID: 0}
+    idleClip: {fileID: 0}
   - state: 4
-    duration: 15
+    cutscene: 3
+    gameDuration: 16
+    score: 4
+    gestureType: 4
+    introClip: {fileID: 7400000, guid: 2fbb7cfa3d20e904e88858c940c050d5, type: 2}
+    idleClip: {fileID: 7400000, guid: b34ac323eb6eb5843a412b21fede6c24, type: 2}
+  - state: 5
+    cutscene: 4
+    gameDuration: 15
+    score: 4
+    gestureType: 5
+    introClip: {fileID: 7400000, guid: 418b5b90c52b7dc448fd4eb7abd0c20e, type: 2}
+    idleClip: {fileID: 7400000, guid: 0dc46c46e71ec9e45bd17c4ae4d7a0a1, type: 2}
   - state: 6
-    duration: 15
+    cutscene: 5
+    gameDuration: 0
+    score: 0
+    gestureType: 0
+    introClip: {fileID: 0}
+    idleClip: {fileID: 0}
+  - state: 7
+    cutscene: 5
+    gameDuration: 15
+    score: 1
+    gestureType: 6
+    introClip: {fileID: 7400000, guid: 4a0fa423912550e40bbfca87ea16e287, type: 2}
+    idleClip: {fileID: 7400000, guid: 32fb98bec6df6474d9ebe368f2bc7ec3, type: 2}
   - state: 8
-    duration: 15
+    cutscene: 8
+    gameDuration: 0
+    score: 0
+    gestureType: 0
+    introClip: {fileID: 0}
+    idleClip: {fileID: 0}
+  - state: 9
+    cutscene: 8
+    gameDuration: 14
+    score: 4
+    gestureType: 4
+    introClip: {fileID: 7400000, guid: ae8e3d697bced9e4dbc520cf46dba588, type: 2}
+    idleClip: {fileID: 7400000, guid: 75e1fb97f9ea31b4eb8a5509c31aacab, type: 2}
   - state: 10
-    duration: 15
+    cutscene: 9
+    gameDuration: 14
+    score: 4
+    gestureType: 5
+    introClip: {fileID: 7400000, guid: 781c04525e46cbe49992f2c45ad558cf, type: 2}
+    idleClip: {fileID: 0}
+  - state: 11
+    cutscene: 6
+    gameDuration: 0
+    score: 0
+    gestureType: 0
+    introClip: {fileID: 0}
+    idleClip: {fileID: 0}
   - state: 12
-    duration: 15
-  - state: 14
-    duration: 15
-  - state: 16
-    duration: 15
-  id: 0
+    cutscene: 6
+    gameDuration: 15
+    score: 4
+    gestureType: 4
+    introClip: {fileID: 7400000, guid: 954dbf2c8d2e1eb4596a1c79dea3831a, type: 2}
+    idleClip: {fileID: 7400000, guid: 5c3c8e4aa28e6e14ab478c25c157c2f5, type: 2}
+  - state: 13
+    cutscene: 7
+    gameDuration: 15
+    score: 4
+    gestureType: 5
+    introClip: {fileID: 7400000, guid: 4ef5fbbbd38d606499329cf894018edd, type: 2}
+    idleClip: {fileID: 7400000, guid: 779b7509f649d6c4cb3d2b612707af5a, type: 2}
   state: 0
+  actualGameSettings:
+    state: 0
+    cutscene: 0
+    gameDuration: 0
+    score: 0
+    gestureType: 0
+    introClip: {fileID: 0}
+    idleClip: {fileID: 0}
   totalSteps: 0
   step: 0
 --- !u!1 &358099082922792213

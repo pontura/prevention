@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public static class Events {    
     public static System.Action OnChangeScene = delegate { };
+    public static System.Action<bool, string> OnActiveDrag = delegate { };
     public static System.Action<bool, string> OnDrag = delegate { };
     public static System.Action<ItemsListDestroyer> ItemsListDestroyerDone = delegate { };
     public static System.Action<GesturesManager.types, bool> OnGestureActive = delegate { };
@@ -13,4 +14,6 @@ public static class Events {
     public static System.Action<float> OnTimeInit = delegate { };
     public static System.Action OnGameDone = delegate { };
     public static System.Action OnTimeout = delegate { };
+    public static System.Action SliderScore = delegate { };
+    
 }

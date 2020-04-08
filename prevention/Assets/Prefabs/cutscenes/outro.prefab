@@ -33989,8 +33989,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2523574213744191744}
   - component: {fileID: 2523574212335752373}
+  - component: {fileID: 210559499577254217}
   m_Layer: 0
-  m_Name: cutscene_1_end
+  m_Name: outro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34036,6 +34037,21 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &210559499577254217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2523574213744191745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c295d6d85abe84a8df608f790a29b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 10
+  part: 0
+  duration: 3
 --- !u!1 &2528392092593153911
 GameObject:
   m_ObjectHideFlags: 0

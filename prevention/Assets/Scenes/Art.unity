@@ -378,7 +378,7 @@ PrefabInstance:
     - target: {fileID: 4718467801648848422, guid: 184845010c8f8e544804eb774f7e9845,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6526390163345441784, guid: 184845010c8f8e544804eb774f7e9845,
         type: 3}
@@ -760,11 +760,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cutscene_1_lose
-      objectReference: {fileID: 0}
-    - target: {fileID: 7659971124205128318, guid: 202ef2ccf7932f042b6414bc2fe42e18,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7659971124205128319, guid: 202ef2ccf7932f042b6414bc2fe42e18,
         type: 3}

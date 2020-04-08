@@ -36,6 +36,8 @@ public class SliderManager : MonoBehaviour
     public void OnOut()
     {
         isPlaying = false;
+        if (manager == null)
+            return;
         manager.SetPlaying(false);
         print("OnOut");
         anim["on"].speed = 0;

@@ -8,10 +8,13 @@ public class GesturesManager : MonoBehaviour
     public enum types
     {
         NONE,
+        DRAG,
         SLIDE_VERTICAL,
         SLIDE_HORIZONTAL,
         SLIDE_CURVE_LEFT,
-        SLIDE_CURVE_RIGHT
+        SLIDE_CURVE_RIGHT,
+        SLIDE_ROUNDED_CENTER,
+        NONE_OUTRO
     }
 
     public verticalTypes verticalType;

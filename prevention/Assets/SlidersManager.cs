@@ -33,12 +33,16 @@ public class SlidersManager : MonoBehaviour
     {        
         Reset();
         if (!isOn)
+        {
+            isActive = false;
             return;
+        }
         loops = 0;
         isActive = true;
         Reset();
         actual = GetData(gestureType);
-        actual.sliderManager.Init(this);
+        if (actual != null)
+            actual.sliderManager.Init(this);
     }
     public void SetPlaying(bool isPlaying)
     {
@@ -47,7 +51,7 @@ public class SlidersManager : MonoBehaviour
     public void SetAnimationProgress(float progress)
     {
         float total = actual.duration * (loops + 1);
-        if (progress> total)
+        if (progress > total)
         {
             Events.SliderScore();
             loops++;
@@ -59,10 +63,13 @@ public class SlidersManager : MonoBehaviour
         foreach (SlideData data in all)
             if (data.gestureType == gestureType)
                 return data;
+        Debug.Log("No hay gesto :" + gestureType);
         return null;
     }
     private void Reset()
     {
+        value = 0;
+        isPlaying = false;
         foreach (SlideData data in all)
             data.sliderManager.gameObject.SetActive(false);
     }

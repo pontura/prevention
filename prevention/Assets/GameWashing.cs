@@ -131,6 +131,8 @@ public class GameWashing : MonoBehaviour
             if ((int)gs.state == id)
                 return gs;
         }
+        id++;
+        return GetSettings();
         Debug.LogError("No hay un settings para " + state);
         return null;
     }
@@ -221,6 +223,8 @@ public class GameWashing : MonoBehaviour
     //}
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Q))
+            Done();
         if (!sliderManager.isActive)
             return;
         if (sliderManager.isPlaying)

@@ -19,6 +19,8 @@ public class CutscenesManager : MonoBehaviour
 
     void OnCutscene(Cutscene.types type, Cutscene.parts part, System.Action action)
     {
+        Debug.Log("cutscene type : " + type + " part: " + part + " " + action);
+
         Cutscene cutscene_to_add = null;
         foreach (Cutscene c in all)
         {
@@ -30,7 +32,7 @@ public class CutscenesManager : MonoBehaviour
         Cutscene cutscene = Instantiate(cutscene_to_add);
         cutscene.transform.SetParent(container);
         cutscene.transform.localPosition = Vector3.zero;
-        cutscene.transform.localScale = Vector3.one;
+        cutscene.transform.localScale = cutscene_to_add.transform.localScale;
         cutscene.Init(action);
     }
 }

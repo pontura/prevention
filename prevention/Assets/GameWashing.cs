@@ -69,16 +69,19 @@ public class GameWashing : MonoBehaviour
     {
         actualGameSettings = GetSettings();
         state = actualGameSettings.state;
-        if (actualGameSettings.gestureType == GesturesManager.types.NONE)
+
+        if(actualGameSettings.cutscene == Cutscene.types.NAILS2)
+            Game.Instance.Replay();
+        else  if (actualGameSettings.gestureType == GesturesManager.types.NONE)
             Events.OnCutscene(actualGameSettings.cutscene, Cutscene.parts.INTRO, NextState);
     }
     void NextState()
-    {       
+    {
+        gameObject.SetActive(true);
         id++;
         actualGameSettings = GetSettings();        
         state = actualGameSettings.state;
 
-        print("Next state " + state);
         if (actualGameSettings.introClip != null)
         {
             anim.Play(actualGameSettings.introClip.name);
@@ -147,7 +150,20 @@ public class GameWashing : MonoBehaviour
     {
         OnGameDone();
         print("Game ready state:  " + state);
-        Events.OnCutscene(actualGameSettings.cutscene, Cutscene.parts.OUTRO_GOOD, NextState);        
+        if (actualGameSettings.cutscene == Cutscene.types.NAILS2)
+            StartCoroutine(Outro());
+        else
+        {
+            Events.OnCutscene(actualGameSettings.cutscene, Cutscene.parts.OUTRO_GOOD, NextState);
+            gameObject.SetActive(false);
+        }
+    }
+    IEnumerator Outro()
+    {
+        anim.Play("outro");
+        yield return new WaitForSeconds(10);
+        Events.OnCutscene(actualGameSettings.cutscene, Cutscene.parts.OUTRO_GOOD, NextState);
+        gameObject.SetActive(false);
     }
     void SetTotalValues(int _total)
     {

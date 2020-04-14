@@ -70,6 +70,7 @@
     <Compile Include="Assets\Data.cs" />
     <Compile Include="Assets\DemoScene.cs" />
     <Compile Include="Assets\DraggerManager.cs" />
+    <Compile Include="Assets\EndPoint.cs" />
     <Compile Include="Assets\Events.cs" />
     <Compile Include="Assets\Game.cs" />
     <Compile Include="Assets\GameWashing.cs" />
@@ -79,11 +80,14 @@
     <Compile Include="Assets\ItemsListDestroyer.cs" />
     <Compile Include="Assets\ItemSoap.cs" />
     <Compile Include="Assets\MainCamera.cs" />
+    <Compile Include="Assets\MusicManager.cs" />
     <Compile Include="Assets\Settings.cs" />
+    <Compile Include="Assets\SfxManager.cs" />
     <Compile Include="Assets\SliderButton.cs" />
     <Compile Include="Assets\SliderManager.cs" />
     <Compile Include="Assets\SlidersManager.cs" />
     <Compile Include="Assets\Timeline.cs" />
+    <Compile Include="Assets\UiSfxManager.cs" />
     <Compile Include="Assets\Utils.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/projects/prevention/git/prevention/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

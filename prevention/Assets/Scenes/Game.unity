@@ -3758,6 +3758,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -3.93
       objectReference: {fileID: 0}
+    - target: {fileID: 358099081032575430, guid: 3aa89d93d113f3e4e8b8e29ad8e388e4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 358099081381289964, guid: 3aa89d93d113f3e4e8b8e29ad8e388e4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 162910996250124987, guid: 3aa89d93d113f3e4e8b8e29ad8e388e4,
         type: 3}
       propertyPath: button

@@ -13,6 +13,11 @@ public static class Events {
     public static System.Action OnGameDone = delegate { };
     public static System.Action OnTimeout = delegate { };
     public static System.Action SliderScore = delegate { };
-    public static System.Action<int> OnGamePartAnim = delegate { };    
+    public static System.Action<int> OnGamePartAnim = delegate { };
 
+
+    public static System.Action<string> PlayMusic = delegate { };
+    public static System.Action<string> PlaySfx = delegate { };
+    public static System.Action<string> PlaySfxRandom = delegate { };
+    public static System.Action<string> PlayUISfx = delegate { };
 }

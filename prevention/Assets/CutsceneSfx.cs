@@ -20,4 +20,20 @@ public class CutsceneSfx : MonoBehaviour {
 	public void Play(int i){
 		source.PlayOneShot (clips [i]);
 	}
+
+    public void PlayIngameMusic() {
+        Events.PlayMusic("ingame");
+    }
+
+    public void PlayMusic(string name) {
+        Events.PlayMusic(name);
+    }
+
+    public void PlayUISfx(string name) {
+        Events.PlayUISfx(name);
+    }
+
+    public void PlaySfx(string name) {
+        Events.PlaySfx(name);
+    }
 }

@@ -22,9 +22,12 @@ public class ItemSoap : MonoBehaviour
 
     public void Over(GameObject go)
     {
+        Events.PlaySfxRandom("soap");
         OverHand(go);
-        if (items != null)
+        if (items != null) {
             items.DestroyPart(go);
+            Events.PlaySfxRandom("bubbles");
+        }
     }
     private void OverHand(GameObject go)
     {

@@ -16,5 +16,7 @@ public class GesturesManager : MonoBehaviour
         SLIDE_ROUNDED_CENTER,
         NONE_OUTRO,
         SLIDE_VERTICAL_RIGHT,
+        SLIDER_S_LEFT,
+        SLIDER_S_RIGHT
     }
 }

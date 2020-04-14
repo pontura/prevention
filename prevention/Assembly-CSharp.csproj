@@ -65,6 +65,7 @@
     <Compile Include="Assets\ButtonCustom.cs" />
     <Compile Include="Assets\ColliderDetection.cs" />
     <Compile Include="Assets\Cutscene.cs" />
+    <Compile Include="Assets\CutsceneSfx.cs" />
     <Compile Include="Assets\CutscenesManager.cs" />
     <Compile Include="Assets\Data.cs" />
     <Compile Include="Assets\DemoScene.cs" />

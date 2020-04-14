@@ -49,21 +49,25 @@ public class SliderManager : MonoBehaviour
     public int dir;
     public void SetValue(float v)
     {
-        if((scoreValue == 0 && v>0) || (scoreValue == 1 && v < 1))
+        if ((scoreValue == 0 && v > 0) || (scoreValue == 1 && v < 1))
+        {
+            print("entra scoreValue: " + scoreValue + "   v: " + v + " dir: " + dir);
             Events.OnGamePartAnim(dir);
-        if (dir == 0 && v == 1 )
+        }
+        if (dir == 0 && v == 1)
         {
             dir = 1;
-            manager.AddScore();            
+            manager.AddScore();
+            print("dir scoreValue: " + scoreValue + "   v: " + v +" dir: " + dir);
         }
         else if (dir == 1 && v == 0)
         {
             dir = 0;
             manager.AddScore();
+            print("dir scoreValue: " + scoreValue + "   v: " + v + " dir: " + dir);
         }
         scoreValue = v;
         float value = v * totalTime;
-        print(dir + " " + anim.clip.name + " value: " + value);
         anim[anim.clip.name].time = value;
         anim[anim.clip.name].speed = 0;
         anim.Play(anim.clip.name);

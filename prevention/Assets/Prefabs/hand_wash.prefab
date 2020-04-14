@@ -34030,7 +34030,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &358099081032575430
 Transform:
   m_ObjectHideFlags: 0
@@ -45626,6 +45626,7 @@ MonoBehaviour:
   item_idle: {fileID: 358099081381289965}
   item_drag: {fileID: 358099081032575431}
   isOn: 0
+  button: {fileID: 0}
 --- !u!1 &358099082905255647
 GameObject:
   m_ObjectHideFlags: 0
@@ -45748,7 +45749,7 @@ MonoBehaviour:
   - state: 7
     cutscene: 5
     gameDuration: 15
-    score: 1
+    score: 2
     gestureType: 6
     introClip: {fileID: 7400000, guid: 4a0fa423912550e40bbfca87ea16e287, type: 2}
     idleClip: {fileID: 7400000, guid: 32fb98bec6df6474d9ebe368f2bc7ec3, type: 2}
@@ -45757,7 +45758,7 @@ MonoBehaviour:
     cutscene: 8
     gameDuration: 14
     score: 4
-    gestureType: 4
+    gestureType: 9
     introClip: {fileID: 7400000, guid: ae8e3d697bced9e4dbc520cf46dba588, type: 2}
     idleClip: {fileID: 7400000, guid: 75e1fb97f9ea31b4eb8a5509c31aacab, type: 2}
     clips: []
@@ -45765,7 +45766,7 @@ MonoBehaviour:
     cutscene: 9
     gameDuration: 14
     score: 4
-    gestureType: 5
+    gestureType: 10
     introClip: {fileID: 7400000, guid: 781c04525e46cbe49992f2c45ad558cf, type: 2}
     idleClip: {fileID: 0}
     clips: []

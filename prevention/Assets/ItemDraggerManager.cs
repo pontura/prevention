@@ -10,6 +10,7 @@ public class ItemDraggerManager : MonoBehaviour
     public GameObject item_drag;
     public bool isOn;
     Vector3 parentPosition;
+    public GameObject button;
 
     void Start()
     {
@@ -37,8 +38,14 @@ public class ItemDraggerManager : MonoBehaviour
         if (itemName != _itemName)
             return;
         this.isOn = _isOn;
-        if(isOn)
+        if (isOn)
+        {
             parentPosition = item_drag.transform.parent.localPosition;
+            Game.Instance.helperManager.SetOff();
+        } else
+        {
+            Game.Instance.helperManager.Init(button.gameObject, "DRAG ME!");
+        }
         SetState(isOn);
     }
     void SetState(bool isOn)

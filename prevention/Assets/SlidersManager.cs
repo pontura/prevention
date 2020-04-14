@@ -30,7 +30,8 @@ public class SlidersManager : MonoBehaviour
         Events.OnGestureActive -= OnGestureActive;
     }
     void OnGestureActive(GesturesManager.types gestureType, bool isOn)
-    {        
+    {
+        print("OnGestureActive" + gestureType + " " + isOn);
         Reset();
         if (!isOn)
         {
@@ -38,11 +39,20 @@ public class SlidersManager : MonoBehaviour
             return;
         }
         loops = 0;
-        isActive = true;
+        
         Reset();
         actual = GetData(gestureType);
         if (actual != null)
             actual.sliderManager.Init(this);
+
+        if (
+            gestureType == GesturesManager.types.DRAG 
+            || gestureType == GesturesManager.types.SLIDE_VERTICAL_LEFT
+            || gestureType == GesturesManager.types.SLIDE_VERTICAL_RIGHT
+            )
+            return;
+
+        isActive = true;
     }
     public void SetPlaying(bool isPlaying)
     {
@@ -57,6 +67,11 @@ public class SlidersManager : MonoBehaviour
             loops++;
         }
         value = progress / actual.duration;
+    }
+    public void AddScore()
+    {
+        Events.SliderScore();
+        loops++;
     }
     SlideData GetData(GesturesManager.types gestureType)
     {

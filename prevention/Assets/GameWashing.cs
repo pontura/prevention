@@ -18,6 +18,7 @@ public class GameWashing : MonoBehaviour
         public GesturesManager.types gestureType;
         public AnimationClip introClip;
         public AnimationClip idleClip;
+        public AnimationClip[] clips;
     }
     Animator anim;
     
@@ -47,23 +48,24 @@ public class GameWashing : MonoBehaviour
         sliderManager = Game.Instance.slidersManager;
         anim = GetComponent<Animator>();        
         Events.ItemsListDestroyerDone += ItemsListDestroyerDone;
-       // Events.OnGestureVertical += OnGestureVertical;
-      //  Events.OnGestureHorizontal += OnGestureHorizontal;
         Events.OnTimeout += OnTimeout;
         Events.SliderScore += SliderScore;
-#if UNITY_EDITOR
+        Events.OnGamePartAnim += OnGamePartAnim;
+
         if (forceState != states.INTRO)
+        {
             id = (int)forceState;
-#endif
+            actualGameSettings = GetSettings();
+        }
+
         IntoCutscene();
     }
     void OnDestroy()
     {
         Events.ItemsListDestroyerDone -= ItemsListDestroyerDone;
-      //  Events.OnGestureVertical -= OnGestureVertical;
-      //  Events.OnGestureHorizontal -= OnGestureHorizontal;
         Events.OnTimeout -= OnTimeout;
         Events.SliderScore -= SliderScore;
+        Events.OnGamePartAnim -= OnGamePartAnim;
     }
     void IntoCutscene()
     {
@@ -102,6 +104,7 @@ public class GameWashing : MonoBehaviour
     }
     void StartPlaying()
     {
+
         print("StartPlaying " + actualGameSettings.state);
 
         SetTotalValues(actualGameSettings.score);
@@ -179,64 +182,7 @@ public class GameWashing : MonoBehaviour
             itemsDone = 0;
             Done();
         }           
-    }
-    public int totalSteps;
-    public int step;
-    //void OnGestureVertical(GesturesManager.verticalTypes type)
-    //{
-    //    step++;
-    //    //if (state == states.VERTICAL1)
-    //    //{
-            
-    //    //    if (type == GesturesManager.verticalTypes.UP)
-    //    //        anim.Play("handwash2_step1_a");
-    //    //    else if (type == GesturesManager.verticalTypes.DOWN)
-    //    //        anim.Play("handwash2_step1_b");
-    //    //}
-    //    //else if (state == states.VERTICAL2)
-    //    //{
-    //    //    if (type == GesturesManager.verticalTypes.UP)
-    //    //        anim.Play("handwash2_step2_a");
-    //    //    else if (type == GesturesManager.verticalTypes.DOWN)
-    //    //        anim.Play("handwash2_step2_b");
-    //    //}
-    //    //else 
-    //    if (state == states.CIRCULOS)
-    //    {
-    //        if (type == GesturesManager.verticalTypes.UP)
-    //            anim.Play("handwash3_a");
-    //        else if (type == GesturesManager.verticalTypes.DOWN)
-    //            anim.Play("handwash3_b");
-    //    }
-    //    else if (state == states.PULGAR1)
-    //    {
-    //        if (type == GesturesManager.verticalTypes.UP)
-    //            anim.CrossFade("handwash4_step1", 0.2f, 0, 0);
-    //    }
-    //    else if (state == states.PULGAR2)
-    //    {
-    //        if (type == GesturesManager.verticalTypes.UP)
-    //            anim.CrossFade("handwash4_step2", 0.2f, 0,  0);
-    //    }
-    //    if (step > totalSteps)
-    //        Done();
-    //}
-    //void OnGestureHorizontal(GesturesManager.horizontalTypes type)
-    //{
-    //    step++;
-    //    if (state == states.PUNIO1)
-    //    {
-    //        if (type == GesturesManager.horizontalTypes.RIGHT)
-    //            anim.CrossFade("handwash5_step1", 0.2f, -1, 0);
-    //    }
-    //    else if (state == states.PUNIO2)
-    //    {
-    //        if (type == GesturesManager.horizontalTypes.RIGHT)
-    //            anim.CrossFade("handwash5_step2", 0.2f, -1, 0);
-    //    }
-    //    if (step > totalSteps)
-    //        Done();
-    //}
+    }   
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
@@ -248,10 +194,25 @@ public class GameWashing : MonoBehaviour
         else
             anim.speed = 0;
     }
+    public int totalSteps;
+    public int step;
     void SliderScore()
     {
         step++;
         if (step >= totalSteps)
             Done();
+    }
+    void OnGamePartAnim(int direction)
+    {
+        string animName;
+        if (direction == 1)
+        {
+            animName = actualGameSettings.clips[1].name;
+        }
+        else
+        {
+            animName = actualGameSettings.clips[0].name;
+        }
+        anim.Play(animName);
     }
 }

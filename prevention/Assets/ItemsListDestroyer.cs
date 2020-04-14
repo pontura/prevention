@@ -17,17 +17,25 @@ public class ItemsListDestroyer : MonoBehaviour
         }
            
     }
-    public void DestroyPart(Vector3 pos)
+    public void DestroyPart(GameObject go)
     {
-        if (all.Count <= 0)
-            return;
-
-        GameObject go = all[0];
-        Destroy(go);
-        all.RemoveAt(0);
+        all.Remove(go);
+        Destroy(go);       
 
         if (all.Count <= 0)
             Events.ItemsListDestroyerDone(this);
-
     }
+    //public void DestroyPart(Vector3 pos)
+    //{
+    //    if (all.Count <= 0)
+    //        return;
+
+    //    GameObject go = all[0];
+    //    Destroy(go);
+    //    all.RemoveAt(0);
+
+    //    if (all.Count <= 0)
+    //        Events.ItemsListDestroyerDone(this);
+
+    //}
 }

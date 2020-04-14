@@ -7,6 +7,7 @@ public class Game : MonoBehaviour
     static Game mInstance = null;
     public DraggerManager draggerManager;
     public SlidersManager slidersManager;
+    public HelperManager helperManager;
 
     public static Game Instance
     {

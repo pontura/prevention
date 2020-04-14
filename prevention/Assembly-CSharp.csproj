@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\ButtonCustom.cs" />
+    <Compile Include="Assets\ColliderDetection.cs" />
     <Compile Include="Assets\Cutscene.cs" />
     <Compile Include="Assets\CutscenesManager.cs" />
     <Compile Include="Assets\Data.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Assets\Game.cs" />
     <Compile Include="Assets\GameWashing.cs" />
     <Compile Include="Assets\GesturesManager.cs" />
+    <Compile Include="Assets\HelperManager.cs" />
     <Compile Include="Assets\ItemDraggerManager.cs" />
     <Compile Include="Assets\ItemsListDestroyer.cs" />
     <Compile Include="Assets\ItemSoap.cs" />

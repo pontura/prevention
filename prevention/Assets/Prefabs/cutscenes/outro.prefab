@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 55674718}
   - component: {fileID: 55674717}
   m_Layer: 0
-  m_Name: Particle System (1)
+  m_Name: magia2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14388,7 +14388,7 @@ GameObject:
   - component: {fileID: 1193975567}
   - component: {fileID: 1193975566}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: magia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14402,7 +14402,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1193975564}
   m_LocalRotation: {x: -0, y: -0, z: 0.9226168, w: -0.385718}
-  m_LocalPosition: {x: 1.89, y: 0.09, z: -2.4000003}
+  m_LocalPosition: {x: 1.89, y: 0.09, z: -2.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2879044845859711746}
@@ -34687,7 +34687,7 @@ Transform:
   - {fileID: 1193975565}
   m_Father: {fileID: 2879044847186021075}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -20.26241}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.598}
 --- !u!1 &2879044845913215291
 GameObject:
   m_ObjectHideFlags: 0
@@ -35758,7 +35758,7 @@ Transform:
   - {fileID: 2879044847550670150}
   m_Father: {fileID: 2879044846377117716}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -58.787556}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -78.317}
 --- !u!1 &2879044846629010843
 GameObject:
   m_ObjectHideFlags: 0
@@ -36583,7 +36583,7 @@ Transform:
   - {fileID: 2879044845859711746}
   m_Father: {fileID: 2879044846014399627}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -53.92715}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -78.394005}
 --- !u!1 &2879044847198960663
 GameObject:
   m_ObjectHideFlags: 0
@@ -37249,7 +37249,7 @@ Transform:
   - {fileID: 55674716}
   m_Father: {fileID: 2879044846514818113}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -20.017189}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4.142}
 --- !u!1 &2879044847554652342
 GameObject:
   m_ObjectHideFlags: 0
@@ -43320,7 +43320,7 @@ PrefabInstance:
     - target: {fileID: 1699200725544651504, guid: 1e1c0c72e1d612440a5f7c5d83f1ef2f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 9.848391
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7803866251727510444, guid: 1e1c0c72e1d612440a5f7c5d83f1ef2f,
         type: 3}
@@ -43335,7 +43335,7 @@ PrefabInstance:
     - target: {fileID: 7803866251727510444, guid: 1e1c0c72e1d612440a5f7c5d83f1ef2f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -9.848391
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 556471014110870992, guid: 1e1c0c72e1d612440a5f7c5d83f1ef2f,
         type: 3}

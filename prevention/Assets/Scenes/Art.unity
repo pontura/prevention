@@ -586,7 +586,7 @@ PrefabInstance:
     - target: {fileID: 4718467801648848422, guid: 184845010c8f8e544804eb774f7e9845,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4718467801648848423, guid: 184845010c8f8e544804eb774f7e9845,
         type: 3}
@@ -819,6 +819,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cutscene_2_soap1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019356396219190843, guid: 0add80c35b0a8054892796fa2250dad7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7019356396219190842, guid: 0add80c35b0a8054892796fa2250dad7,
         type: 3}

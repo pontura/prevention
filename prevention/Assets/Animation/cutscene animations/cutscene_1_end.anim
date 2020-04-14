@@ -16627,7 +16627,25 @@ AnimationClip:
     path: KoronaKid/character/cuerpo_spr/cuerpo_bone1/cuerpo_bone2/cabeza/cabeza_izquierda
     classID: 1
     script: {fileID: 0}
-  m_PPtrCurves: []
+  m_PPtrCurves:
+  - curve:
+    - time: 0
+      value: {fileID: 0}
+    - time: 1.4166666
+      value: {fileID: 0}
+    attribute: m_RootBone
+    path: KoronaKid/character/cuerpo_spr/cuerpo_bone1/cuerpo_bone2/brazo1/brazo1b_spr
+    classID: 114
+    script: {fileID: 11500000, guid: 57c008f954fe54a8bb972de1018a2cb8, type: 3}
+  - curve:
+    - time: 0
+      value: {fileID: 0}
+    - time: 1.4166666
+      value: {fileID: 0}
+    attribute: m_RootBone
+    path: KoronaKid/character/cuerpo_spr/cuerpo_bone1/cuerpo_bone2/brazo2/brazo2b_spr
+    classID: 114
+    script: {fileID: 11500000, guid: 57c008f954fe54a8bb972de1018a2cb8, type: 3}
   m_SampleRate: 60
   m_WrapMode: 1
   m_Bounds:

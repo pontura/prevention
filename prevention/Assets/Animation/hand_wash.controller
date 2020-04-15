@@ -26,32 +26,6 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &-8882605324015367222
-AnimatorState:
-  serializedVersion: 5
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: handwash4_step2_b
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 660a061b672fa634a89ea55cec0642f7, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1102 &-8480723349437283255
 AnimatorState:
   serializedVersion: 5
@@ -229,6 +203,32 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 2a271c59512fc59469a6258d4589ae07, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &-2704300334436672818
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: handwash4_step2b
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 1ac4ba2525b56f14b9881c6b769bb890, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -490,32 +490,6 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &2075612685948373917
-AnimatorState:
-  serializedVersion: 5
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: handwash4_step1_a
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: eb26485868cc5e04a8dafd06e2828e37, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1102 &2423806575148417230
 AnimatorState:
   serializedVersion: 5
@@ -537,32 +511,6 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 781c04525e46cbe49992f2c45ad558cf, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &3039633233776936928
-AnimatorState:
-  serializedVersion: 5
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: handwash4_step1_b
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 5f7356b2d7049784ab8eea0c05babd54, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -736,28 +684,28 @@ AnimatorStateMachine:
     m_Position: {x: 660, y: 340, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5414446085983396742}
-    m_Position: {x: 390, y: 490, z: 0}
+    m_Position: {x: 360, y: 470, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4575068333141863940}
-    m_Position: {x: 650, y: 500, z: 0}
+    m_Position: {x: 630, y: 480, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2423806575148417230}
-    m_Position: {x: 390, y: 600, z: 0}
+    m_Position: {x: 370, y: 590, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3817444104446129024}
-    m_Position: {x: 650, y: 590, z: 0}
+    m_Position: {x: 640, y: 590, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3747203967649475412}
     m_Position: {x: 380, y: 700, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -696194623823128464}
-    m_Position: {x: 680, y: 740, z: 0}
+    m_Position: {x: 660, y: 750, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6673105083136677527}
     m_Position: {x: 390, y: 790, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3556102848944514109}
-    m_Position: {x: 690, y: 800, z: 0}
+    m_Position: {x: 680, y: 810, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3148712925357730026}
     m_Position: {x: 795, y: 1105, z: 0}
@@ -780,18 +728,6 @@ AnimatorStateMachine:
     m_State: {fileID: -8975848225737944334}
     m_Position: {x: 880, y: 410, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 2075612685948373917}
-    m_Position: {x: 860, y: 470, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 3039633233776936928}
-    m_Position: {x: 860, y: 510, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 7226867943918708757}
-    m_Position: {x: 850, y: 570, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -8882605324015367222}
-    m_Position: {x: 850, y: 610, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: -2136727525844277755}
     m_Position: {x: 300, y: -110, z: 0}
   - serializedVersion: 1
@@ -802,7 +738,13 @@ AnimatorStateMachine:
     m_Position: {x: 660, y: 710, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4290934050140725921}
-    m_Position: {x: 710, y: 830, z: 0}
+    m_Position: {x: 690, y: 850, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 7345872183929695552}
+    m_Position: {x: 640, y: 530, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -2704300334436672818}
+    m_Position: {x: 640, y: 640, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -917,14 +859,14 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &7226867943918708757
+--- !u!1102 &7345872183929695552
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: handwash4_step2_a
+  m_Name: handwash4_step1b
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -937,7 +879,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 139909b563f65664fb2a6d60ab9a773c, type: 2}
+  m_Motion: {fileID: 7400000, guid: 3c9132fa149402448bb408e4d8a6ac08, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

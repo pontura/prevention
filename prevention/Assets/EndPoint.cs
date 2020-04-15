@@ -14,7 +14,7 @@ public class EndPoint : MonoBehaviour
     {
         Events.OnSliderChangeDirection += OnSliderChangeDirection;
     }
-    void onDestroy()
+    void OnDestroy()
     {
         Events.OnSliderChangeDirection -= OnSliderChangeDirection;
     }

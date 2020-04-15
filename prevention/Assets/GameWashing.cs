@@ -146,9 +146,10 @@ public class GameWashing : MonoBehaviour
     }
     void OnGameDone()
     {
+        sliderManager.isActive = false;
         anim.speed = 1;
         Events.PlayUISfx("stepWin");
-        print("Game ready state:  " + state);
+        print("Game ready state:  " + state + " actualGameSettings.cutscene " + actualGameSettings.cutscene);
         if (actualGameSettings.cutscene == Cutscene.types.NAILS2)
             StartCoroutine(Outro());
         else
@@ -160,6 +161,8 @@ public class GameWashing : MonoBehaviour
     IEnumerator Outro()
     {
         anim.Play("outro");
+        yield return new WaitForEndOfFrame();
+        anim.speed = 1;
         yield return new WaitForSeconds(10);
         Events.OnCutscene(actualGameSettings.cutscene, Cutscene.parts.OUTRO_GOOD, NextState);
         gameObject.SetActive(false);

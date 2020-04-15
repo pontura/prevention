@@ -26,22 +26,17 @@ public class SlidersManager : MonoBehaviour
     {
         Events.OnGestureActive -= OnGestureActive;
     }
-    void OnGestureActive(GesturesManager.types gestureType, bool isOn)
+    void OnGestureActive(GesturesManager.types gestureType, bool _isActive)
     {
-        print("OnGestureActive" + gestureType + " " + isOn);
+        print("OnGestureActive" + gestureType + " " + _isActive);
         Reset();
-        if (!isOn)
+        this.isActive = _isActive;
+        if (isActive)
         {
-            isActive = false;
-            return;
+            actual = GetData(gestureType);
+            if (actual != null)
+                actual.sliderManager.Init(this);
         }
-        
-        Reset();
-        actual = GetData(gestureType);
-        if (actual != null)
-            actual.sliderManager.Init(this);
-
-        isActive = true;
     }
     SlideData GetData(GesturesManager.types gestureType)
     {

@@ -143,6 +143,7 @@ public class GameWashing : MonoBehaviour
     }
     void OnGameDone()
     {
+        Events.PlayUISfx("stepWin");
         print("Game ready state:  " + state);
         if (actualGameSettings.cutscene == Cutscene.types.NAILS2)
             StartCoroutine(Outro());

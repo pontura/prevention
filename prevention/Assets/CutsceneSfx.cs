@@ -21,6 +21,10 @@ public class CutsceneSfx : MonoBehaviour {
 		source.PlayOneShot (clips [i]);
 	}
 
+    public void Pitch(float pitch) {
+        source.pitch = pitch;
+    }
+
     public void PlayIngameMusic() {
         Events.PlayMusic("ingame");
     }

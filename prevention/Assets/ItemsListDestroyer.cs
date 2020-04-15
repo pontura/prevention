@@ -15,27 +15,13 @@ public class ItemsListDestroyer : MonoBehaviour
                 all.Add(t.gameObject);
             id++;
         }
-           
+        Game.Instance.AddTotalScore(all.Count);
     }
     public void DestroyPart(GameObject go)
     {
         all.Remove(go);
-        Destroy(go);       
+        Destroy(go);
 
-        if (all.Count <= 0)
-            Events.ItemsListDestroyerDone(this);
+        Events.OnStep();
     }
-    //public void DestroyPart(Vector3 pos)
-    //{
-    //    if (all.Count <= 0)
-    //        return;
-
-    //    GameObject go = all[0];
-    //    Destroy(go);
-    //    all.RemoveAt(0);
-
-    //    if (all.Count <= 0)
-    //        Events.ItemsListDestroyerDone(this);
-
-    //}
 }

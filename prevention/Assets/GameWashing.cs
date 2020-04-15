@@ -47,10 +47,10 @@ public class GameWashing : MonoBehaviour
     {
         sliderManager = Game.Instance.slidersManager;
         anim = GetComponent<Animator>();        
-        Events.ItemsListDestroyerDone += ItemsListDestroyerDone;
+        
         Events.OnTimeout += OnTimeout;
-        Events.SliderScore += SliderScore;
         Events.OnGamePartAnim += OnGamePartAnim;
+        Events.OnGameDone += OnGameDone;
 
         if (forceState != states.INTRO)
         {
@@ -62,9 +62,8 @@ public class GameWashing : MonoBehaviour
     }
     void OnDestroy()
     {
-        Events.ItemsListDestroyerDone -= ItemsListDestroyerDone;
+        Events.OnGameDone -= OnGameDone;
         Events.OnTimeout -= OnTimeout;
-        Events.SliderScore -= SliderScore;
         Events.OnGamePartAnim -= OnGamePartAnim;
     }
     void IntoCutscene()
@@ -107,7 +106,7 @@ public class GameWashing : MonoBehaviour
 
         print("StartPlaying " + actualGameSettings.state);
 
-        SetTotalValues(actualGameSettings.score);
+        Game.Instance.AddTotalScore(actualGameSettings.score);
         Events.OnTimeInit(actualGameSettings.gameDuration);
 
         if(actualGameSettings.idleClip)
@@ -142,16 +141,8 @@ public class GameWashing : MonoBehaviour
         Debug.LogError("No hay un settings para " + state);
         return null;
     }
-    private void OnGameDone()
+    void OnGameDone()
     {
-        Events.OnActiveDrag(false, "soap");
-        Events.OnGestureActive(GesturesManager.types.NONE, false);
-        Events.OnDrag(false, "soap");
-        Events.OnGameDone();
-    }
-    void Done()
-    {
-        OnGameDone();
         print("Game ready state:  " + state);
         if (actualGameSettings.cutscene == Cutscene.types.NAILS2)
             StartCoroutine(Outro());
@@ -168,25 +159,11 @@ public class GameWashing : MonoBehaviour
         Events.OnCutscene(actualGameSettings.cutscene, Cutscene.parts.OUTRO_GOOD, NextState);
         gameObject.SetActive(false);
     }
-    void SetTotalValues(int _total)
-    {
-        totalSteps = _total;
-        step = 0;
-    }
-    int itemsDone = 0;
-    void ItemsListDestroyerDone(ItemsListDestroyer i)
-    {
-        itemsDone++;
-        if (itemsDone >= 2)
-        {
-            itemsDone = 0;
-            Done();
-        }           
-    }   
+   
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
-            Done();
+            Events.OnGameDone();
         if (!sliderManager.isActive)
             return;
         if (sliderManager.isPlaying)
@@ -196,12 +173,7 @@ public class GameWashing : MonoBehaviour
     }
     public int totalSteps;
     public int step;
-    void SliderScore()
-    {
-        step++;
-        if (step >= totalSteps)
-            Done();
-    }
+   
     void OnGamePartAnim(int direction)
     {
         string animName;

@@ -63,14 +63,14 @@ public class SlidersManager : MonoBehaviour
         float total = actual.duration * (loops + 1);
         if (progress > total)
         {
-            Events.SliderScore();
+            Events.OnStep();
             loops++;
         }
         value = progress / actual.duration;
     }
     public void AddScore()
     {
-        Events.SliderScore();
+        Events.OnStep();
         loops++;
     }
     SlideData GetData(GesturesManager.types gestureType)

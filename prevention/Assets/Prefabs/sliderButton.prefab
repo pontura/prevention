@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9111888, b: 0, a: 0.07058824}
+  m_Color: {r: 0.40000004, g: 0.83921576, b: 0.43529415, a: 0.44705883}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc4f593b00229734b9577a19a19073cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scrollBar: {fileID: 0}
 --- !u!114 &5103092619671159212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,7 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9111888, b: 0, a: 1}
+  m_Color: {r: 0.40000004, g: 0.83921576, b: 0.43529415, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

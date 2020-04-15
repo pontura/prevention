@@ -11,13 +11,13 @@ public class EndPoint : MonoBehaviour
     {
         anim = GetComponent<Animation>();
         SetAnim();
-        Events.SliderScore += SliderScore;
+        Events.OnStep += OnStep;
     }
     private void OnDestroy()
     {
-        Events.SliderScore -= SliderScore;
+        Events.OnStep -= OnStep;
     }
-    void SliderScore()
+    void OnStep()
     {
         num++;
         SetAnim();

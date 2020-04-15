@@ -28,5 +28,8 @@ public class Data : MonoBehaviour {
         }
 		DontDestroyOnLoad(this);
 	}
-	
+	public void LoadScene(string sceneName)
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+    }
 }

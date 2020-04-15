@@ -20,4 +20,6 @@ public static class Events {
     public static System.Action<string> PlaySfx = delegate { };
     public static System.Action<string> PlaySfxRandom = delegate { };
     public static System.Action<string> PlayUISfx = delegate { };
+    public static System.Action StopMusic = delegate { };
+
 }

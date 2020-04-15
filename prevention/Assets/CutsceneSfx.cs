@@ -36,4 +36,8 @@ public class CutsceneSfx : MonoBehaviour {
     public void PlaySfx(string name) {
         Events.PlaySfx(name);
     }
+
+    public void StopMusic() {
+        Events.StopMusic();
+    }
 }

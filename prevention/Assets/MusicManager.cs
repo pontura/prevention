@@ -19,11 +19,13 @@ public class MusicManager : MonoBehaviour
     void Start()
     {
         Events.PlayMusic += PlayMusic;
+        Events.StopMusic += StopMusic;
         asource = GetComponent<AudioSource>();
     }
 
     private void OnDestroy() {
         Events.PlayMusic -= PlayMusic;
+        Events.StopMusic -= StopMusic;
     }
 
     // Update is called once per frame
@@ -38,5 +40,9 @@ public class MusicManager : MonoBehaviour
             asource.clip = mc.clip;
             asource.Play();
         }
+    }
+
+    void StopMusic() {
+        asource.Stop();
     }
 }

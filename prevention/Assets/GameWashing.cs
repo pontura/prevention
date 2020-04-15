@@ -51,6 +51,7 @@ public class GameWashing : MonoBehaviour
         Events.OnTimeout += OnTimeout;
         Events.OnGamePartAnim += OnGamePartAnim;
         Events.OnGameDone += OnGameDone;
+        Events.OnSliderPointByPointProgression += OnSliderPointByPointProgression;
 
         if (forceState != states.INTRO)
         {
@@ -65,6 +66,7 @@ public class GameWashing : MonoBehaviour
         Events.OnGameDone -= OnGameDone;
         Events.OnTimeout -= OnTimeout;
         Events.OnGamePartAnim -= OnGamePartAnim;
+        Events.OnSliderPointByPointProgression -= OnSliderPointByPointProgression;
     }
     void IntoCutscene()
     {
@@ -78,6 +80,7 @@ public class GameWashing : MonoBehaviour
     }
     void NextState()
     {
+        anim.speed = 1;
         gameObject.SetActive(true);
         id++;
         actualGameSettings = GetSettings();        
@@ -143,6 +146,7 @@ public class GameWashing : MonoBehaviour
     }
     void OnGameDone()
     {
+        anim.speed = 1;
         Events.PlayUISfx("stepWin");
         print("Game ready state:  " + state);
         if (actualGameSettings.cutscene == Cutscene.types.NAILS2)
@@ -163,17 +167,31 @@ public class GameWashing : MonoBehaviour
    
     private void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Q))
             Events.OnGameDone();
         if (!sliderManager.isActive)
             return;
-        if (sliderManager.isPlaying)
-            anim.speed = 1;
-        else
-            anim.speed = 0;
+
+        if (
+           actualGameSettings.gestureType != GesturesManager.types.DRAG
+           && actualGameSettings.gestureType != GesturesManager.types.NONE
+            && actualGameSettings.gestureType != GesturesManager.types.NONE_OUTRO
+           )
+        {
+
+            if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime < animValue)
+            {
+                print(anim.GetCurrentAnimatorStateInfo(0).normalizedTime + " " + animValue);
+                anim.speed = 1;
+            }
+
+            else
+                anim.speed = 0;
+        }
+
+       
     }
-    public int totalSteps;
-    public int step;
    
     void OnGamePartAnim(int direction)
     {
@@ -187,5 +205,37 @@ public class GameWashing : MonoBehaviour
             animName = actualGameSettings.clips[0].name;
         }
         anim.Play(animName);
+    }
+    public float animValue;
+    void OnSliderPointByPointProgression(bool back, float _animvalue, bool pingpong)
+    {
+        AnimationClip clip;
+        if (back && pingpong)
+        {
+            clip = actualGameSettings.clips[1];
+            animValue = (1 - _animvalue);// * clip.length;
+        }
+        else
+        {
+            clip = actualGameSettings.clips[0];
+            if (!pingpong)
+            {
+                if (_animvalue < animValue)
+                {
+                    anim.Rebind();
+                    animValue = 0;
+                } else
+                    animValue = _animvalue;
+            }
+            else
+            {
+                animValue = _animvalue;
+            }
+           
+
+        }
+        anim.Play(clip.name);
+        anim.speed = 0;
+        print(_animvalue + "  animValue " + animValue +  " clip.length: " + clip.length + "  pingpong " + pingpong);
     }
 }

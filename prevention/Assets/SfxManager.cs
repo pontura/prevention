@@ -24,7 +24,7 @@ public class SfxManager : MonoBehaviour {
 
     private void OnDestroy() {
         Events.PlaySfx -= PlaySfx;
-        Events.PlaySfxRandom += PlaySfxRandom;
+        Events.PlaySfxRandom -= PlaySfxRandom;
     }
 
     // Update is called once per frame

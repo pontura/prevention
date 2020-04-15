@@ -6,9 +6,7 @@ using System;
 public class SlidersManager : MonoBehaviour
 {
     public bool isActive;
-    public bool isPlaying;
     public float value;
-    public int loops;
     public List<SlideData> all;
     SlideData actual;
 
@@ -17,7 +15,6 @@ public class SlidersManager : MonoBehaviour
     {
         public GesturesManager.types gestureType;
         public SliderManager sliderManager;
-        public float duration;
     }
 
     void Start()
@@ -38,40 +35,13 @@ public class SlidersManager : MonoBehaviour
             isActive = false;
             return;
         }
-        loops = 0;
         
         Reset();
         actual = GetData(gestureType);
         if (actual != null)
             actual.sliderManager.Init(this);
 
-        if (
-            gestureType == GesturesManager.types.DRAG 
-            || gestureType == GesturesManager.types.SLIDE_VERTICAL_LEFT
-            || gestureType == GesturesManager.types.SLIDE_VERTICAL_RIGHT
-            )
-            return;
-
         isActive = true;
-    }
-    public void SetPlaying(bool isPlaying)
-    {
-        this.isPlaying = isPlaying;
-    }
-    public void SetAnimationProgress(float progress)
-    {
-        float total = actual.duration * (loops + 1);
-        if (progress > total)
-        {
-            Events.OnStep();
-            loops++;
-        }
-        value = progress / actual.duration;
-    }
-    public void AddScore()
-    {
-        Events.OnStep();
-        loops++;
     }
     SlideData GetData(GesturesManager.types gestureType)
     {
@@ -84,7 +54,6 @@ public class SlidersManager : MonoBehaviour
     private void Reset()
     {
         value = 0;
-        isPlaying = false;
         foreach (SlideData data in all)
             data.sliderManager.gameObject.SetActive(false);
     }

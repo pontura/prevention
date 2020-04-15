@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HelperManager : MonoBehaviour
 {
-
+    
     public GameObject helper;
     public Text field;
     public Animation anim;

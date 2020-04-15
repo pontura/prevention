@@ -87,6 +87,7 @@
     <Compile Include="Assets\SliderButton.cs" />
     <Compile Include="Assets\SliderManager.cs" />
     <Compile Include="Assets\SlidersManager.cs" />
+    <Compile Include="Assets\SlliderPointByPoint.cs" />
     <Compile Include="Assets\Splash.cs" />
     <Compile Include="Assets\Timeline.cs" />
     <Compile Include="Assets\UiSfxManager.cs" />

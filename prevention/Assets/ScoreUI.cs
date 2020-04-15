@@ -37,7 +37,6 @@ public class ScoreUI : MonoBehaviour
     }
     void OnGameProgress(float value)
     {
-        print("OnGameProgress " + value);
         this.value = 1-value;
     }
     private void Update()

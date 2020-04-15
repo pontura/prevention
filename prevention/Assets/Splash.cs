@@ -10,6 +10,7 @@ public class Splash : MonoBehaviour
     void Start()
     {
        anim.SetActive(false);
+        Events.PlayMusic("splash");
     }
 
     public void OnClicked()

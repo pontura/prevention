@@ -228,6 +228,10 @@ MonoBehaviour:
     name: popup
   - clip: {fileID: 8300000, guid: acb7b3c082124a847be3a97cd01f13c7, type: 3}
     name: stepWin
+  - clip: {fileID: 8300000, guid: 9552aa62026104140993276c58be7120, type: 3}
+    name: suspense1
+  - clip: {fileID: 8300000, guid: 1077d8f78faa46f49be9f98754142f35, type: 3}
+    name: suspense2
 --- !u!82 &7647127440007392213
 AudioSource:
   m_ObjectHideFlags: 0

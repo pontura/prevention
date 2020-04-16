@@ -49,6 +49,10 @@ MonoBehaviour:
     name: splash
   - clip: {fileID: 8300000, guid: 5ab5ea8760c6709488d2470716520a98, type: 3}
     name: ingame
+  - clip: {fileID: 8300000, guid: 9492f723fa88401478a53148c3dec124, type: 3}
+    name: lose
+  - clip: {fileID: 8300000, guid: e263a4f39b1e63c4aaf54c63cc7f2688, type: 3}
+    name: win
 --- !u!82 &7647127438171603919
 AudioSource:
   m_ObjectHideFlags: 0
@@ -232,6 +236,10 @@ MonoBehaviour:
     name: suspense1
   - clip: {fileID: 8300000, guid: 1077d8f78faa46f49be9f98754142f35, type: 3}
     name: suspense2
+  - clip: {fileID: 8300000, guid: 9492f723fa88401478a53148c3dec124, type: 3}
+    name: lose
+  - clip: {fileID: 8300000, guid: e263a4f39b1e63c4aaf54c63cc7f2688, type: 3}
+    name: win
 --- !u!82 &7647127440007392213
 AudioSource:
   m_ObjectHideFlags: 0

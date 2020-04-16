@@ -17,6 +17,7 @@ public static class Events {
     public static System.Action<float> OnGameProgress = delegate { };
 
     public static System.Action<string> PlayMusic = delegate { };
+    public static System.Action<string> PlayMusicOnce = delegate { };
     public static System.Action<string> PlaySfx = delegate { };
     public static System.Action<string> PlaySfxRandom = delegate { };
     public static System.Action<string,int> PlaySfxTransp = delegate { };

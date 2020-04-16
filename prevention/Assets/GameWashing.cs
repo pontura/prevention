@@ -129,6 +129,8 @@ public class GameWashing : MonoBehaviour
     }
     void OnTimeout()
     {
+        Events.StopMusic();
+        Events.PlayMusicOnce("lose");
         Events.OnCutscene(actualGameSettings.cutscene, Cutscene.parts.OUTRO_BAD, Game.Instance.Replay);
         Destroy(gameObject);
     }
@@ -152,8 +154,7 @@ public class GameWashing : MonoBehaviour
         print("Game ready state:  " + state + " actualGameSettings.cutscene " + actualGameSettings.cutscene);
         if (actualGameSettings.cutscene == Cutscene.types.NAILS2)
             StartCoroutine(Outro());
-        else
-        {
+        else {
             Events.OnCutscene(actualGameSettings.cutscene, Cutscene.parts.OUTRO_GOOD, NextState);
             gameObject.SetActive(false);
         }
@@ -164,6 +165,8 @@ public class GameWashing : MonoBehaviour
         yield return new WaitForEndOfFrame();
         anim.speed = 1;
         yield return new WaitForSeconds(10);
+        Events.StopMusic();
+        Events.PlayMusicOnce("win");
         Events.OnCutscene(actualGameSettings.cutscene, Cutscene.parts.OUTRO_GOOD, NextState);
         gameObject.SetActive(false);
     }

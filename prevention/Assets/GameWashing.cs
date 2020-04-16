@@ -215,6 +215,9 @@ public class GameWashing : MonoBehaviour
     public float animValue;
     void OnSliderPointByPointProgression(bool back, float _animvalue, bool pingpong)
     {
+
+        if (!sliderManager.isActive)
+            return;
         AnimationClip clip;
         if (back && pingpong)
         {

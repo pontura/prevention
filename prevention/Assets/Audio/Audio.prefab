@@ -380,6 +380,8 @@ MonoBehaviour:
     name: bubbles
   - clip: {fileID: 8300000, guid: acb7b3c082124a847be3a97cd01f13c7, type: 3}
     name: stepWin
+  - clip: {fileID: 8300000, guid: 324ffb3e870d55945a019baafb9110ed, type: 3}
+    name: step
 --- !u!82 &7647127440060466509
 AudioSource:
   m_ObjectHideFlags: 0

@@ -92,6 +92,7 @@ public class SlliderPointByPoint : SliderManager
         if(ep.id == nextID)
         {
             sliderButton.SetOn(true);
+            Events.PlayNextSliderSfx();
             Events.OnStep();
             Next();
             SetHelper(false);

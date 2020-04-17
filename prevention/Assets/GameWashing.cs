@@ -155,8 +155,9 @@ public class GameWashing : MonoBehaviour
         if (actualGameSettings.cutscene == Cutscene.types.NAILS2)
             StartCoroutine(Outro());
         else {
-            Events.OnCutscene(actualGameSettings.cutscene, Cutscene.parts.OUTRO_GOOD, NextState);
             gameObject.SetActive(false);
+            Events.OnCutscene(actualGameSettings.cutscene, Cutscene.parts.OUTRO_GOOD, NextState);
+            
         }
     }
     IEnumerator Outro()

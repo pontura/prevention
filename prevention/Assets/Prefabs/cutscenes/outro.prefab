@@ -34892,7 +34892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c008f954fe54a8bb972de1018a2cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RootBone: {fileID: 0}
+  m_RootBone: {fileID: 2879044847186021075}
   m_BoneTransforms:
   - {fileID: 2879044847186021075}
   - {fileID: 2879044845859711746}
@@ -35564,7 +35564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c008f954fe54a8bb972de1018a2cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RootBone: {fileID: 0}
+  m_RootBone: {fileID: 2879044846514818113}
   m_BoneTransforms:
   - {fileID: 2879044846514818113}
   - {fileID: 2879044847550670150}

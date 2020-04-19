@@ -45702,7 +45702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2de2ad2ab184b3469a83c6783eb37f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceState: 10
+  forceState: 0
   gameSettings:
   - state: 0
     cutscene: 1
@@ -45773,7 +45773,7 @@ MonoBehaviour:
     score: 40
     gestureType: 10
     introClip: {fileID: 7400000, guid: 781c04525e46cbe49992f2c45ad558cf, type: 2}
-    idleClip: {fileID: 0}
+    idleClip: {fileID: 7400000, guid: 568b7b80fca4508488ade6a201f6112a, type: 2}
     clips:
     - {fileID: 7400000, guid: 568b7b80fca4508488ade6a201f6112a, type: 2}
     - {fileID: 7400000, guid: 1ac4ba2525b56f14b9881c6b769bb890, type: 2}

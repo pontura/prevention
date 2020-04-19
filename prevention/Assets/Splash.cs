@@ -21,6 +21,6 @@ public class Splash : MonoBehaviour
     }
     void GotoGame()
     {
-        Data.Instance.LoadScene("Game");
+        Data.Instance.LoadScene("LevelSelector");
     }
 }

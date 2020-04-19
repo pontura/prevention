@@ -5,6 +5,9 @@ public class Data : MonoBehaviour {
     
     static Data mInstance = null;
     public Settings settings;
+    public UserData userData;
+    public Animation fade;
+    string sceneName;
 
     public static Data Instance
     {
@@ -27,9 +30,21 @@ public class Data : MonoBehaviour {
             return;
         }
 		DontDestroyOnLoad(this);
-	}
+        fade.gameObject.SetActive(false);
+    }
 	public void LoadScene(string sceneName)
     {
+        this.sceneName = sceneName;
+        StartCoroutine(LoadFade());
+    }
+    IEnumerator LoadFade()
+    {
+        fade.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.35f);
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+        yield return new WaitForSeconds(0.25f);
+        fade.Play("off");
+        yield return new WaitForSeconds(1);
+        fade.gameObject.SetActive(false);
     }
 }

@@ -73,9 +73,10 @@ public class GameWashing : MonoBehaviour
         actualGameSettings = GetSettings();
         state = actualGameSettings.state;
 
-        if(actualGameSettings.cutscene == Cutscene.types.NAILS2)
-            Game.Instance.Replay();
-        else  if (actualGameSettings.gestureType == GesturesManager.types.NONE)
+        if (actualGameSettings.cutscene == Cutscene.types.NAILS2)
+            Game.Instance.LevelComplete();
+
+        else if (actualGameSettings.gestureType == GesturesManager.types.NONE)
             Events.OnCutscene(actualGameSettings.cutscene, Cutscene.parts.INTRO, NextState);
     }
     void NextState()
@@ -148,16 +149,19 @@ public class GameWashing : MonoBehaviour
     }
     void OnGameDone()
     {
+
         sliderManager.isActive = false;
         anim.speed = 1;
         Events.PlayUISfx("stepWin");
         print("Game ready state:  " + state + " actualGameSettings.cutscene " + actualGameSettings.cutscene);
         if (actualGameSettings.cutscene == Cutscene.types.NAILS2)
+        {
+            Data.Instance.userData.AllLevelComplete();
             StartCoroutine(Outro());
+        }            
         else {
             gameObject.SetActive(false);
             Events.OnCutscene(actualGameSettings.cutscene, Cutscene.parts.OUTRO_GOOD, NextState);
-            
         }
     }
     IEnumerator Outro()

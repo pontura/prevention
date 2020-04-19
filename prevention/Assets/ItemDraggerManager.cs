@@ -30,6 +30,7 @@ public class ItemDraggerManager : MonoBehaviour
 
         if(!canBeDragged)
             SetState(false);
+        button.SetActive(canBeDragged);
     }
     void OnDrag(bool _isOn, string _itemName)
     {

@@ -52,4 +52,8 @@ public class Timeline : MonoBehaviour
         panel.SetActive(false);
         isOn = false;
     }
+    public float GetValue()
+    {
+        return bar.fillAmount;
+    }
 }

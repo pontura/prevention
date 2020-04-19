@@ -5,6 +5,7 @@ using UnityEngine;
 public class CutscenesManager : MonoBehaviour
 {
     public List<Cutscene> all;
+    public List<Cutscene> level_2;
     public Transform container;
 
     void Awake()
@@ -22,11 +23,21 @@ public class CutscenesManager : MonoBehaviour
         Debug.Log("cutscene type : " + type + " part: " + part + " " + action);
 
         Cutscene cutscene_to_add = null;
+      
         foreach (Cutscene c in all)
         {
             if (c.type == type && c.part == part)
                 cutscene_to_add = c;
         }
+        if (Data.Instance.userData.levelID == 2)
+        {
+            foreach (Cutscene c in level_2)
+            {
+                if (c.type == type && c.part == part)
+                    cutscene_to_add = c;
+            }
+        }
+
         if (cutscene_to_add == null)
         {
             action();

@@ -79,6 +79,9 @@
     <Compile Include="Assets\ItemDraggerManager.cs" />
     <Compile Include="Assets\ItemsListDestroyer.cs" />
     <Compile Include="Assets\ItemSoap.cs" />
+    <Compile Include="Assets\LevelButton.cs" />
+    <Compile Include="Assets\LevelData.cs" />
+    <Compile Include="Assets\LevelSelector.cs" />
     <Compile Include="Assets\MainCamera.cs" />
     <Compile Include="Assets\MusicManager.cs" />
     <Compile Include="Assets\ScoreUI.cs" />
@@ -89,8 +92,11 @@
     <Compile Include="Assets\SlidersManager.cs" />
     <Compile Include="Assets\SlliderPointByPoint.cs" />
     <Compile Include="Assets\Splash.cs" />
+    <Compile Include="Assets\Star.cs" />
+    <Compile Include="Assets\Stars.cs" />
     <Compile Include="Assets\Timeline.cs" />
     <Compile Include="Assets\UiSfxManager.cs" />
+    <Compile Include="Assets\UserData.cs" />
     <Compile Include="Assets\Utils.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/projects/prevention/git/prevention/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

@@ -10,6 +10,8 @@ public class Game : MonoBehaviour
     public HelperManager helperManager;
     public int totalSteps;
     public int steps;
+    public GameObject[] levels;
+    public Timeline timeline;
 
     public static Game Instance
     {
@@ -29,6 +31,11 @@ public class Game : MonoBehaviour
     }
     private void Start()
     {
+        foreach (GameObject go in levels)
+            go.SetActive(false);
+
+        levels[Data.Instance.userData.levelID - 1].SetActive(true);
+
         Events.OnGameDone += OnGameDone;
         Events.OnStep += OnStep;
     }
@@ -36,6 +43,11 @@ public class Game : MonoBehaviour
     {
         Events.OnGameDone -= OnGameDone;
         Events.OnStep -= OnStep;
+    }
+    public void LevelComplete()
+    {
+        Replay();
+        
     }
     public void Replay()
     {
@@ -61,6 +73,7 @@ public class Game : MonoBehaviour
     }
     public void AddTotalScore(int total)
     {
+        print(total + " totalSteps: " + totalSteps);
         totalSteps += total;
     }
     void OnStep()

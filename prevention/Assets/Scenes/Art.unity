@@ -662,6 +662,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6526390163345441784, guid: 184845010c8f8e544804eb774f7e9845,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -91.910995
+      objectReference: {fileID: 0}
     - target: {fileID: 4718467801648848423, guid: 184845010c8f8e544804eb774f7e9845,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -736,11 +741,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.11158797
-      objectReference: {fileID: 0}
-    - target: {fileID: 6526390163345441784, guid: 184845010c8f8e544804eb774f7e9845,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -91.910995
       objectReference: {fileID: 0}
     - target: {fileID: 6526390161874425528, guid: 184845010c8f8e544804eb774f7e9845,
         type: 3}
@@ -1275,6 +1275,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Splash
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087838714798445353, guid: 8d8c61dd3ed9fdc43b463be5b1ce1fe5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5683171206166820916, guid: 8d8c61dd3ed9fdc43b463be5b1ce1fe5,
         type: 3}

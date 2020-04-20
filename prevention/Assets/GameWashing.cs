@@ -158,6 +158,7 @@ public class GameWashing : MonoBehaviour
         {
             Data.Instance.userData.AllLevelComplete();
             StartCoroutine(Outro());
+            Game.Instance.Reset();
         }            
         else {
             gameObject.SetActive(false);

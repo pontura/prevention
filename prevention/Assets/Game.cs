@@ -31,8 +31,7 @@ public class Game : MonoBehaviour
     }
     private void Start()
     {
-        foreach (GameObject go in levels)
-            go.SetActive(false);
+        Reset();
 
         levels[Data.Instance.userData.levelID - 1].SetActive(true);
 
@@ -46,8 +45,7 @@ public class Game : MonoBehaviour
     }
     public void LevelComplete()
     {
-        Replay();
-        
+        Replay();        
     }
     public void Replay()
     {
@@ -88,5 +86,10 @@ public class Game : MonoBehaviour
             value = (float)steps / (float)totalSteps;
 
         Events.OnGameProgress(value);
+    }
+    public void Reset()
+    {
+        foreach (GameObject go in levels)
+            go.SetActive(false);
     }
 }

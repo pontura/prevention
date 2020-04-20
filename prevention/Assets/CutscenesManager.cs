@@ -41,7 +41,7 @@ public class CutscenesManager : MonoBehaviour
         if (cutscene_to_add == null)
         {
             action();
-            Debug.LogError("No hay cutscene de : " + type + " " + part + " " + action);
+            Debug.Log("No hay cutscene de : " + type + " " + part + " " + action);
             return;
         }
         Cutscene cutscene = Instantiate(cutscene_to_add);

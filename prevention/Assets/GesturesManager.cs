@@ -18,6 +18,8 @@ public class GesturesManager : MonoBehaviour
         SLIDE_VERTICAL_RIGHT,
         SLIDER_S_LEFT,
         SLIDER_S_RIGHT,
-        SLIDE_BOTTOM_2
+        SLIDE_BOTTOM_2,
+        SLIDER_INFINITO_1,
+        SLIDER_INFINITO_2
     }
 }

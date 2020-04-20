@@ -158,7 +158,7 @@ public class GameWashing : MonoBehaviour
         {
             Data.Instance.userData.AllLevelComplete();
             StartCoroutine(Outro());
-            Game.Instance.Reset();
+           
         }            
         else {
             gameObject.SetActive(false);
@@ -170,7 +170,8 @@ public class GameWashing : MonoBehaviour
         anim.Play("outro");
         yield return new WaitForEndOfFrame();
         anim.speed = 1;
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(8);
+        Game.Instance.Reset();
         Events.StopMusic();
         Events.PlayMusicOnce("win");
         Events.OnCutscene(actualGameSettings.cutscene, Cutscene.parts.OUTRO_GOOD, NextState);
@@ -194,7 +195,6 @@ public class GameWashing : MonoBehaviour
 
             if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime < animValue)
             {
-                print(anim.GetCurrentAnimatorStateInfo(0).normalizedTime + " " + animValue);
                 anim.speed = 1;
             }
 

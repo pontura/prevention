@@ -73,8 +73,9 @@ public class GameWashing : MonoBehaviour
         state = actualGameSettings.state;
 
         if (actualGameSettings.cutscene == Cutscene.types.NAILS2)
-            Game.Instance.LevelComplete();
-
+        {
+            //end game!
+        }
         else if (actualGameSettings.gestureType == GesturesManager.types.NONE)
             Events.OnCutscene(actualGameSettings.cutscene, Cutscene.parts.INTRO, NextState);
     }
@@ -131,7 +132,7 @@ public class GameWashing : MonoBehaviour
     {
         Events.StopMusic();
         Events.PlayMusicOnce("lose");
-        Events.OnCutscene(actualGameSettings.cutscene, Cutscene.parts.OUTRO_BAD, Game.Instance.Replay);
+        Events.OnCutscene(actualGameSettings.cutscene, Cutscene.parts.OUTRO_BAD, Game.Instance.GameOver);
         Destroy(gameObject);
     }
     GameSettings GetSettings()
@@ -169,12 +170,15 @@ public class GameWashing : MonoBehaviour
         anim.Play("outro");
         yield return new WaitForEndOfFrame();
         anim.speed = 1;
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(4);
+        Game.Instance.LevelComplete();
+        yield return new WaitForSeconds(2);
         Game.Instance.Reset();
         Events.StopMusic();
         Events.PlayMusicOnce("win");
         Events.OnCutscene(actualGameSettings.cutscene, Cutscene.parts.OUTRO_GOOD, NextState);
         gameObject.SetActive(false);
+        
     }
    
     private void Update()

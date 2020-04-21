@@ -43,13 +43,19 @@ public class Game : MonoBehaviour
         Events.OnGameDone -= OnGameDone;
         Events.OnStep -= OnStep;
     }
-    public void LevelComplete()
+    public void GameOver()
     {
-        Replay();        
+        Data.Instance.LoadScene("GameOver");
     }
     public void Replay()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Done");
+        Data.Instance.LoadScene("Game");
+    }
+
+    public void LevelComplete()
+    {
+        Reset();
+        GetComponent<Summary>().Init();      
     }
     
     void ItemsListDestroyerDone(ItemsListDestroyer i)

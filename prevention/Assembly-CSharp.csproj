@@ -94,6 +94,7 @@
     <Compile Include="Assets\Splash.cs" />
     <Compile Include="Assets\Star.cs" />
     <Compile Include="Assets\Stars.cs" />
+    <Compile Include="Assets\Summary.cs" />
     <Compile Include="Assets\Timeline.cs" />
     <Compile Include="Assets\UiSfxManager.cs" />
     <Compile Include="Assets\UserData.cs" />

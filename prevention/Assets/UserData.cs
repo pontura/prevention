@@ -8,6 +8,7 @@ public class UserData : MonoBehaviour
     public List<LevelData> levelsData;
     public List<float> thisLevelscores;
     public int levelUnlocked;
+    public float newScore;
 
     private void Start()
     {
@@ -32,17 +33,19 @@ public class UserData : MonoBehaviour
     void SetStars()
     {
         for (int a = 1; a < 6; a++)
-        {
-            if(levelsData[a - 1].score == 0)
-                levelsData[a - 1].stars = 0;
-            else if (levelsData[a - 1].score < levelsData[a - 1].scoreForStar_1)
-                levelsData[a - 1].stars = 1;
-            else if (levelsData[a - 1].score < levelsData[a - 1].scoreForStar_2)
-                levelsData[a - 1].stars = 2;
-            else
-                levelsData[a - 1].stars = 3;
-        }
+            levelsData[a - 1].stars = GetStars(levelsData[a - 1].score, a);
         
+    }
+    public int GetStars(float score, int levelID)
+    {
+        if (score == 0)
+            return 0;
+        else if (score < levelsData[levelID - 1].scoreForStar_1)
+            return 1;
+        else if (score < levelsData[levelID - 1].scoreForStar_2)
+            return 2;
+        else
+            return 3;
     }
     void OnGameDone()
     {
@@ -51,9 +54,11 @@ public class UserData : MonoBehaviour
     }
     public void AllLevelComplete()
     {
-        float newScore = GetAverage();
+        newScore = GetAverage();
         if (levelsData[levelID - 1].score < newScore)
             SaveNewHiscore(newScore);
+
+        LoadScores();
     }
     void SaveNewHiscore(float newScore)
     {

@@ -251,6 +251,6 @@ public class GameWashing : MonoBehaviour
         }
         anim.Play(clip.name);
         anim.speed = 0;
-        print(_animvalue + "  animValue " + animValue +  " clip.length: " + clip.length + "  pingpong " + pingpong);
+       // print(_animvalue + "  animValue " + animValue +  " clip.length: " + clip.length + "  pingpong " + pingpong);
     }
 }

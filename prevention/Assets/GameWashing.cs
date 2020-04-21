@@ -58,7 +58,6 @@ public class GameWashing : MonoBehaviour
             id = (int)forceState;
             actualGameSettings = GetSettings();
         }
-
         IntoCutscene();
     }
     void OnDestroy()
@@ -107,8 +106,9 @@ public class GameWashing : MonoBehaviour
     }
     void StartPlaying()
     {
-
         print("StartPlaying " + actualGameSettings.state);
+
+        
 
         Game.Instance.AddTotalScore(actualGameSettings.score);
         Events.OnTimeInit(actualGameSettings.gameDuration);
@@ -126,7 +126,6 @@ public class GameWashing : MonoBehaviour
                 Events.OnGestureActive(actualGameSettings.gestureType, true);
                 break;
         }
-
     }
     void OnTimeout()
     {

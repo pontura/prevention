@@ -34,7 +34,8 @@ public class EndPoint : MonoBehaviour
     }
     public void SetOver()
     {
-        slider.SetOver(this);
+        if(slider != null)
+            slider.SetOver(this);
     }
     public void SetState(bool isActive)
     {

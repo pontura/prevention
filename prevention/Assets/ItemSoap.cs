@@ -20,6 +20,10 @@ public class ItemSoap : MonoBehaviour
     public float timerCheck = 0.05f;
     public float distanceToCheck = 0.1f;
 
+    public void Init()
+    {
+
+    }
     public void Over(GameObject go)
     {
         Events.PlaySfxRandom("soap");
@@ -33,45 +37,5 @@ public class ItemSoap : MonoBehaviour
     {
         items = go.GetComponentInParent<ItemsListDestroyer>();
     }
-
-    //if (gameWashing.state == GameWashing.states.GAME1)
-    //{
-    //    if (Vector2.Distance(transform.position, hand1.transform.position) < distance_to_hand)
-    //        Over(hand1);
-    //    else if (Vector2.Distance(transform.position, hand2.transform.position) < distance_to_hand)
-    //        Over(hand2);
-    //    else
-    //        items = null;
-    //} else if (gameWashing.state == GameWashing.states.GAME2)
-    //{
-    //    if (Vector2.Distance(transform.position, hand1b.transform.position) < distance_to_hand)
-    //        Over(hand1b);
-    //    else if (Vector2.Distance(transform.position, hand2b.transform.position) < distance_to_hand)
-    //        Over(hand2b);
-    //    else
-    //        items = null;
-    //}
-    //else
-    //{
-    //    return;
-    //}
-
-
-    //timer += Time.deltaTime;
-    //if(timer> timerCheck)
-    //{
-    //    timer = 0;
-    //    if (Vector2.Distance(transform.position, lastPos) > distanceToCheck)
-    //        Check();
-    //    lastPos = transform.position;
-    //}
-    // }
-    //void Check()
-    //{
-    //    if (items != null)
-    //    {
-    //        items.DestroyPart(transform.position);
-    //    }
-    //}
 
 }

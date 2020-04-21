@@ -26,6 +26,8 @@ public class ItemDraggerManager : MonoBehaviour
     {
         if (itemName != _itemName)
             return;
+
+        item_drag.GetComponent<ItemSoap>().Init();
         canBeDragged = _canBeDragged;
 
         if(!canBeDragged)

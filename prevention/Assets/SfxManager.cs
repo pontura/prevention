@@ -73,7 +73,7 @@ public class SfxManager : MonoBehaviour {
     int sliderIndex;
     int[] sliderValues = {-2,0,2,3,5};
     void PlayNextSliderSfx() {
-        Debug.Log("Index: " + sliderIndex+" / val: " + sliderValues[sliderIndex]);
+       // Debug.Log("Index: " + sliderIndex+" / val: " + sliderValues[sliderIndex]);
         SfxClip sc = sfxClips.Find(x => x.name == "step");
         asource.pitch = 1f + sliderValues[sliderIndex] * pitchStep;
         asource.PlayOneShot(sc.clip);

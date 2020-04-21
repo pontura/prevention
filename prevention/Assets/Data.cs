@@ -31,7 +31,6 @@ public class Data : MonoBehaviour {
         }
 		DontDestroyOnLoad(this);
         fade.gameObject.SetActive(false);
-        PlayerPrefs.DeleteAll();
     }
 	public void LoadScene(string sceneName)
     {

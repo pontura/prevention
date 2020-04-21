@@ -57669,7 +57669,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6637833083739092321
 Transform:
   m_ObjectHideFlags: 0
@@ -57746,7 +57746,7 @@ MonoBehaviour:
     clips: []
   - state: 2
     cutscene: 2
-    gameDuration: 18
+    gameDuration: 16
     score: 0
     gestureType: 1
     introClip: {fileID: 7400000, guid: 70125e6702cd7bb4faa4efba93878787, type: 2}
@@ -57754,8 +57754,8 @@ MonoBehaviour:
     clips: []
   - state: 4
     cutscene: 3
-    gameDuration: 20
-    score: 35
+    gameDuration: 16
+    score: 40
     gestureType: 2
     introClip: {fileID: 7400000, guid: 2fbb7cfa3d20e904e88858c940c050d5, type: 2}
     idleClip: {fileID: 7400000, guid: b34ac323eb6eb5843a412b21fede6c24, type: 2}
@@ -57764,8 +57764,8 @@ MonoBehaviour:
     - {fileID: 7400000, guid: e92f8f1db5d762f46b4f61ed3e8f086c, type: 2}
   - state: 5
     cutscene: 4
-    gameDuration: 20
-    score: 35
+    gameDuration: 16
+    score: 40
     gestureType: 8
     introClip: {fileID: 7400000, guid: 418b5b90c52b7dc448fd4eb7abd0c20e, type: 2}
     idleClip: {fileID: 7400000, guid: 0dc46c46e71ec9e45bd17c4ae4d7a0a1, type: 2}
@@ -57774,8 +57774,8 @@ MonoBehaviour:
     - {fileID: 7400000, guid: 25079bb515fc9ce48a49f3236309a541, type: 2}
   - state: 7
     cutscene: 5
-    gameDuration: 24
-    score: 80
+    gameDuration: 16
+    score: 100
     gestureType: 6
     introClip: {fileID: 7400000, guid: 4a0fa423912550e40bbfca87ea16e287, type: 2}
     idleClip: {fileID: 7400000, guid: 32fb98bec6df6474d9ebe368f2bc7ec3, type: 2}
@@ -57783,7 +57783,7 @@ MonoBehaviour:
     - {fileID: 7400000, guid: 32fb98bec6df6474d9ebe368f2bc7ec3, type: 2}
   - state: 9
     cutscene: 8
-    gameDuration: 18
+    gameDuration: 16
     score: 40
     gestureType: 9
     introClip: {fileID: 7400000, guid: ae8e3d697bced9e4dbc520cf46dba588, type: 2}
@@ -57793,7 +57793,7 @@ MonoBehaviour:
     - {fileID: 7400000, guid: 3c9132fa149402448bb408e4d8a6ac08, type: 2}
   - state: 10
     cutscene: 9
-    gameDuration: 18
+    gameDuration: 16
     score: 40
     gestureType: 10
     introClip: {fileID: 7400000, guid: 781c04525e46cbe49992f2c45ad558cf, type: 2}
@@ -57803,9 +57803,9 @@ MonoBehaviour:
     - {fileID: 7400000, guid: 1ac4ba2525b56f14b9881c6b769bb890, type: 2}
   - state: 12
     cutscene: 6
-    gameDuration: 18
-    score: 40
-    gestureType: 3
+    gameDuration: 16
+    score: 55
+    gestureType: 12
     introClip: {fileID: 7400000, guid: 954dbf2c8d2e1eb4596a1c79dea3831a, type: 2}
     idleClip: {fileID: 7400000, guid: 5c3c8e4aa28e6e14ab478c25c157c2f5, type: 2}
     clips:
@@ -57813,9 +57813,9 @@ MonoBehaviour:
     - {fileID: 7400000, guid: f704098e82f45e34ba1f37e2537c809d, type: 2}
   - state: 13
     cutscene: 7
-    gameDuration: 18
-    score: 40
-    gestureType: 11
+    gameDuration: 16
+    score: 55
+    gestureType: 13
     introClip: {fileID: 7400000, guid: 4ef5fbbbd38d606499329cf894018edd, type: 2}
     idleClip: {fileID: 7400000, guid: 779b7509f649d6c4cb3d2b612707af5a, type: 2}
     clips:

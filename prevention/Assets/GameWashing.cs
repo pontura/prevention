@@ -169,16 +169,18 @@ public class GameWashing : MonoBehaviour
     {
         anim.Play("outro");
         yield return new WaitForEndOfFrame();
-        anim.speed = 1;
-        yield return new WaitForSeconds(4);
-        Game.Instance.LevelComplete();
-        yield return new WaitForSeconds(2);
-        Game.Instance.Reset();
+        anim.speed = 1;       
+        yield return new WaitForSeconds(5);
+        print("ASDASDSA");
+        
         Events.StopMusic();
         Events.PlayMusicOnce("win");
         Events.OnCutscene(actualGameSettings.cutscene, Cutscene.parts.OUTRO_GOOD, NextState);
-        gameObject.SetActive(false);
-        
+        yield return new WaitForSeconds(4);
+        print("22222222");
+        Game.Instance.LevelComplete();
+        Game.Instance.Reset();
+        // gameObject.SetActive(false);        
     }
    
     private void Update()

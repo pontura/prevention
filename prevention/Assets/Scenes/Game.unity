@@ -2628,6 +2628,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: hand_wash_1
       objectReference: {fileID: 0}
+    - target: {fileID: 358099082905255647, guid: 3aa89d93d113f3e4e8b8e29ad8e388e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 358099082905255646, guid: 3aa89d93d113f3e4e8b8e29ad8e388e4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9312,7 +9317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1970949164, guid: aafe62aa95b491241a29b48be26678cf, type: 3}
       propertyPath: levelID
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aafe62aa95b491241a29b48be26678cf, type: 3}
@@ -16217,7 +16222,7 @@ PrefabInstance:
     - target: {fileID: 6637833083739092320, guid: b017cc37b935a804ca4d3c4b0f993dc6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6637833083739092321, guid: b017cc37b935a804ca4d3c4b0f993dc6,
         type: 3}
@@ -16257,7 +16262,7 @@ PrefabInstance:
     - target: {fileID: 6637833083739092321, guid: b017cc37b935a804ca4d3c4b0f993dc6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6637833083739092321, guid: b017cc37b935a804ca4d3c4b0f993dc6,
         type: 3}
@@ -16276,54 +16281,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6405925386503661202, guid: b017cc37b935a804ca4d3c4b0f993dc6,
         type: 3}
-      propertyPath: gameSettings.Array.data[3].gameDuration
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 6405925386503661202, guid: b017cc37b935a804ca4d3c4b0f993dc6,
+      propertyPath: gameSettings.Array.data[1].introClip
+      value: 
+      objectReference: {fileID: 7400000, guid: 77e5b19140e4aa54f99c7f63f3ff977e, type: 2}
+    - target: {fileID: 2927807197416617124, guid: b017cc37b935a804ca4d3c4b0f993dc6,
         type: 3}
-      propertyPath: gameSettings.Array.data[3].score
-      value: 38
-      objectReference: {fileID: 0}
-    - target: {fileID: 6405925386503661202, guid: b017cc37b935a804ca4d3c4b0f993dc6,
-        type: 3}
-      propertyPath: gameSettings.Array.data[4].gameDuration
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 6405925386503661202, guid: b017cc37b935a804ca4d3c4b0f993dc6,
-        type: 3}
-      propertyPath: gameSettings.Array.data[5].gameDuration
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 6405925386503661202, guid: b017cc37b935a804ca4d3c4b0f993dc6,
-        type: 3}
-      propertyPath: gameSettings.Array.data[6].score
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 6405925386503661202, guid: b017cc37b935a804ca4d3c4b0f993dc6,
-        type: 3}
-      propertyPath: gameSettings.Array.data[7].score
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 6405925386503661202, guid: b017cc37b935a804ca4d3c4b0f993dc6,
-        type: 3}
-      propertyPath: gameSettings.Array.data[8].score
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 6405925386503661202, guid: b017cc37b935a804ca4d3c4b0f993dc6,
-        type: 3}
-      propertyPath: gameSettings.Array.data[8].gestureType
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 6405925386503661202, guid: b017cc37b935a804ca4d3c4b0f993dc6,
-        type: 3}
-      propertyPath: gameSettings.Array.data[9].score
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 6405925386503661202, guid: b017cc37b935a804ca4d3c4b0f993dc6,
-        type: 3}
-      propertyPath: gameSettings.Array.data[9].gestureType
-      value: 13
-      objectReference: {fileID: 0}
+      propertyPath: button
+      value: 
+      objectReference: {fileID: 668076556}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b017cc37b935a804ca4d3c4b0f993dc6, type: 3}
 --- !u!4 &1471368432 stripped

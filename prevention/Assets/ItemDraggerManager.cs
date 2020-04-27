@@ -30,8 +30,15 @@ public class ItemDraggerManager : MonoBehaviour
         item_drag.GetComponent<ItemSoap>().Init();
         canBeDragged = _canBeDragged;
 
-        if(!canBeDragged)
+        if (!canBeDragged)
+        {
             SetState(false);
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            gameObject.SetActive(true);
+        }
         button.SetActive(canBeDragged);
     }
     void OnDrag(bool _isOn, string _itemName)

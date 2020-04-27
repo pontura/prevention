@@ -10,7 +10,7 @@ public class Game : MonoBehaviour
     public HelperManager helperManager;
     public int totalSteps;
     public int steps;
-    public GameObject[] levels;
+    public GameWashing[] levels;
     public Timeline timeline;
 
     public static Game Instance
@@ -28,15 +28,15 @@ public class Game : MonoBehaviour
     {
         if (!mInstance)
             mInstance = this;
+        Reset();
     }
     private void Start()
     {
-        Reset();
-
-        levels[Data.Instance.userData.levelID - 1].SetActive(true);
+        levels[Data.Instance.userData.levelID - 1].gameObject.SetActive(true);
 
         Events.OnGameDone += OnGameDone;
         Events.OnStep += OnStep;
+        LoadDataFromSettings();
     }
     private void OnDestroy()
     {
@@ -95,7 +95,69 @@ public class Game : MonoBehaviour
     }
     public void Reset()
     {
-        foreach (GameObject go in levels)
-            go.SetActive(false);
+        foreach (GameWashing go in levels)
+            go.gameObject.SetActive(false);
+    }
+    void LoadDataFromSettings()
+    {
+        if (Data.Instance.settings.gameData.circles.Length == 0)
+            Invoke("LoadDataFromSettings", 0.1f);
+        else
+            LoadData();
+    }
+    void LoadData()
+    {
+        Settings.GameData gData = Data.Instance.settings.gameData;
+        int id = 0;
+        foreach (GameWashing gw in levels)
+        {
+            GameWashing.GameSettings s;
+            s = GetGameSettings(gw, GameWashing.states.GAME1);
+            s.gameDuration = gData.soap_duration[id];
+            s.score = gData.soap_score[id];
+
+            s = GetGameSettings(gw, GameWashing.states.GAME2);
+            s.gameDuration = gData.soap_duration[id];
+            s.score = gData.soap_score[id];
+
+            s = GetGameSettings(gw, GameWashing.states.VERTICAL1);
+            s.gameDuration = gData.vertical[id];
+            s.score = gData.vertical_score[id];
+
+            s = GetGameSettings(gw, GameWashing.states.VERTICAL2);
+            s.gameDuration = gData.vertical[id];
+            s.score = gData.vertical_score[id];
+
+            s = GetGameSettings(gw, GameWashing.states.CIRCULOS);
+            s.gameDuration = gData.circles[id];
+            s.score = gData.circles_score[id];
+
+            s = GetGameSettings(gw, GameWashing.states.PULGAR1);
+            s.gameDuration = gData.pulgar[id];
+            s.score = gData.pulgar_score[id];
+
+            s = GetGameSettings(gw, GameWashing.states.PULGAR2);
+            s.gameDuration = gData.pulgar[id];
+            s.score = gData.pulgar_score[id];
+
+            s = GetGameSettings(gw, GameWashing.states.PUNIO1);
+            s.gameDuration = gData.nails[id];
+            s.score = gData.nails_score[id];
+
+            s = GetGameSettings(gw, GameWashing.states.PUNIO2);
+            s.gameDuration = gData.nails[id];
+            s.score = gData.nails_score[id];
+
+            id++;
+        }
+    }
+    GameWashing.GameSettings GetGameSettings(GameWashing gameWashing, GameWashing.states state)
+    {
+        foreach(GameWashing.GameSettings settings in gameWashing.gameSettings)
+        {
+            if (settings.state == state)
+                return settings;
+        }
+        return null;
     }
 }

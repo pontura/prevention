@@ -7548,7 +7548,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &525494914
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7558,7 +7558,7 @@ RectTransform:
   m_GameObject: {fileID: 525494913}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 37923168}
   - {fileID: 2119659274}
@@ -7568,7 +7568,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -146.6, y: -53.89}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &525494915
@@ -7586,11 +7586,11 @@ MonoBehaviour:
   anim: {fileID: 0}
   helperText: DRAG ME!
   sliderButton: {fileID: 2119659276}
-  endPointsContainer: {fileID: 0}
+  endPointsContainer: {fileID: 1428385647}
   all: []
   id: 0
   nextID: 0
-  pingpong: 0
+  pingpong: 1
   back: 0
 --- !u!111 &525494916
 Animation:
@@ -9386,6 +9386,10 @@ MonoBehaviour:
     sliderManager: {fileID: 1474035136}
   - gestureType: 13
     sliderManager: {fileID: 1577803384}
+  - gestureType: 14
+    sliderManager: {fileID: 525494915}
+  - gestureType: 15
+    sliderManager: {fileID: 1497078028}
 --- !u!114 &634268588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21689,7 +21693,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1497078027
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21709,7 +21713,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 147.2, y: -53.89}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1497078028
@@ -21727,11 +21731,11 @@ MonoBehaviour:
   anim: {fileID: 0}
   helperText: DRAG ME!
   sliderButton: {fileID: 1854391613}
-  endPointsContainer: {fileID: 0}
+  endPointsContainer: {fileID: 913978737}
   all: []
   id: 0
   nextID: 0
-  pingpong: 0
+  pingpong: 1
   back: 0
 --- !u!111 &1497078029
 Animation:

@@ -44,6 +44,7 @@ public class ItemsListDestroyer : MonoBehaviour
     }
     public void DestroyPart(GameObject go)
     {
+        print("DestroyPart " + go.name);
         all.Remove(go);
         go.SetActive(false);
         Events.OnStep();

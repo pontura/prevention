@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\ButtonCustom.cs" />
+    <Compile Include="Assets\ClockManager.cs" />
     <Compile Include="Assets\ColliderDetection.cs" />
     <Compile Include="Assets\Cutscene.cs" />
     <Compile Include="Assets\CutsceneSfx.cs" />

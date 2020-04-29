@@ -96,7 +96,12 @@ public class Game : MonoBehaviour
     public void Reset()
     {
         foreach (GameWashing go in levels)
+        {
+#if UNITY_ANDROID 
+            go.state = GameWashing.states.INTRO;
+#endif
             go.gameObject.SetActive(false);
+        }
     }
     void LoadDataFromSettings()
     {

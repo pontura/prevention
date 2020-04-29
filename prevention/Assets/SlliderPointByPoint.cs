@@ -68,13 +68,17 @@ public class SlliderPointByPoint : SliderManager
         else
         {
             id++;
-            if (id >= all.Count - 1)
+            if (id >= all.Count)
                 id = 0;
         }
         if (back)
             nextID = id - 1;
         else
+        {
             nextID = id + 1;
+            if (nextID >= all.Count)
+                nextID = 0;
+        }
 
         Events.OnSliderPointByPointProgression(back, (float)id/(all.Count-1), pingpong);
 

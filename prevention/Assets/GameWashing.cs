@@ -5,6 +5,7 @@ using System;
 public class GameWashing : MonoBehaviour
 {
     int id = 0;
+    public Dirt dirt;
     public states forceState;
     public List<GameSettings> gameSettings;
     SlidersManager sliderManager;

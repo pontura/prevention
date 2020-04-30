@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 1895b1c18db9bba439c8143067216eaf
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: DIN Next CYR
+  fontNames:
+  - DIN Next CYR
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 13787df319b8fbe4b8560726a23c7406, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

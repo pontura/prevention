@@ -25,6 +25,13 @@ public class GesturesManager : MonoBehaviour
         RULO_2,
         CENTER_ROMBOS,
         ROUND_SMALL_LEFT,
-        ROUND_SMALL_RIGHT
+        ROUND_SMALL_RIGHT,
+        TRIANGLE_LEFT,
+        TRIANGLE_RIGHT,
+        CENTER_ANIMATED,
+        SLIDE_ZIGZAG_1_ANIMATED,
+        SLIDE_ZIGZAG_2_ANIMATED,
+        SLIDER_S_LEFT_ANIMATED,
+        SLIDER_S_RIGHT_ANIMATED
     }
 }

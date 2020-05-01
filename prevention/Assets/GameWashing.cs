@@ -108,9 +108,7 @@ public class GameWashing : MonoBehaviour
     }
     void StartPlaying()
     {
-        print("StartPlaying " + actualGameSettings.state);
-
-        
+        print("StartPlaying " + actualGameSettings.state);        
 
         Game.Instance.AddTotalScore(actualGameSettings.score);
         Events.OnTimeInit(actualGameSettings.gameDuration);
@@ -154,7 +152,7 @@ public class GameWashing : MonoBehaviour
         sliderManager.isActive = false;
         anim.speed = 1;
         Events.PlayUISfx("stepWin");
-        print("Game ready state:  " + state + " actualGameSettings.cutscene " + actualGameSettings.cutscene);
+     //   print("Game ready state:  " + state + " actualGameSettings.cutscene " + actualGameSettings.cutscene);
         if (actualGameSettings.cutscene == Cutscene.types.NAILS2)
         {
             Data.Instance.userData.AllLevelComplete();
@@ -172,13 +170,11 @@ public class GameWashing : MonoBehaviour
         yield return new WaitForEndOfFrame();
         anim.speed = 1;       
         yield return new WaitForSeconds(5);
-        print("ASDASDSA");
         
         Events.StopMusic();
         Events.PlayMusicOnce("win");
         Events.OnCutscene(actualGameSettings.cutscene, Cutscene.parts.OUTRO_GOOD, NextState);
         yield return new WaitForSeconds(4);
-        print("22222222");
         Game.Instance.LevelComplete();
         Game.Instance.Reset();
         // gameObject.SetActive(false);        

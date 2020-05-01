@@ -17,6 +17,8 @@ public class LevelSelector : MonoBehaviour
     }
     public void OpenLevel(int levelID)
     {
+        if (levelID > 3)
+            return;
         Data.Instance.userData.levelID = levelID;
         Data.Instance.LoadScene("Game");
     }

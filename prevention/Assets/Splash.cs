@@ -5,17 +5,17 @@ using UnityEngine;
 public class Splash : MonoBehaviour
 {
     public GameObject enter;
-    public GameObject anim;
+    public GameObject logo;
 
     void Start()
     {
-       anim.SetActive(false);
+        logo.SetActive(false);
         Events.PlayMusic("splash");
     }
 
     public void OnClicked()
     {
-        anim.SetActive(true);
+        logo.SetActive(true);
         enter.SetActive(false);
         Invoke("GotoGame", 4);
     }

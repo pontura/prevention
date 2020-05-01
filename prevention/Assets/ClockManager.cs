@@ -48,7 +48,12 @@ public class ClockManager : MonoBehaviour
         else
         {
             int min = (int)(sec / 60);
-            text = "0" + min + ":" + sec;
+            sec -= (min * 60);
+            if (sec < 10)
+                text = "0" + min + ":0" + sec;
+            else
+                text = "0" + min + ":" + sec;
+
         }
 
         return text;

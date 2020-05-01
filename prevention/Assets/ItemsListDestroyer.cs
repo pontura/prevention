@@ -63,9 +63,9 @@ public class ItemsListDestroyer : MonoBehaviour
             case 1:
                 prob = 15; break;
             case 2:
-                prob = 40; break;
-            case 3:
                 prob = 60; break;
+            case 3:
+                prob = 70; break;
 
         }
         if (Random.Range(0, 100) < prob)

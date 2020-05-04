@@ -15,11 +15,17 @@ public class ClockManager : MonoBehaviour
         clockGO.SetActive(false);
         Events.OnTimeInit += OnTimeInit;
         Events.OnGameDone += OnGameDone;
+        Events.OnTimeout += OnTimeout;
     }
     private void OnDestroy()
     {
         Events.OnTimeInit -= OnTimeInit;
         Events.OnGameDone -= OnGameDone;
+        Events.OnTimeout -= OnTimeout;
+    }
+    void OnTimeout()
+    {
+        OnGameDone();
     }
     void OnGameDone()
     {

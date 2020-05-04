@@ -13,12 +13,12 @@ public class LevelButton : MonoBehaviour
     public void Init(LevelData levelData)
     {
         this.levelData = levelData;
-        if (levelData.id>Data.Instance.userData.levelUnlocked)
-        {
-            locked.SetActive(true);
-            GetComponent<Button>().interactable = false;
-        } 
-        else
+        //if (levelData.id>Data.Instance.userData.levelUnlocked)
+        //{
+        //    locked.SetActive(true);
+        //    GetComponent<Button>().interactable = false;
+        //} 
+        //else
             locked.SetActive(false);
         stars.Init(levelData.stars);
     }

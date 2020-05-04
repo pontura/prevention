@@ -41,6 +41,7 @@ public class Timeline : MonoBehaviour
         value += Time.deltaTime;
         if(value >= totalTime)
         {
+            isOn = false;
             Events.OnTimeout();
             Reset();
             return;

@@ -21,10 +21,12 @@ public class SlidersManager : MonoBehaviour
     {
         Reset();
         Events.OnGestureActive += OnGestureActive;
+        Events.OnTimeout += OnTimeout;
     }
     void OnDestroy()
     {
         Events.OnGestureActive -= OnGestureActive;
+        Events.OnTimeout -= OnTimeout;
     }
     void OnGestureActive(GesturesManager.types gestureType, bool _isActive)
     {
@@ -45,6 +47,10 @@ public class SlidersManager : MonoBehaviour
                 return data;
         Debug.Log("No hay gesto :" + gestureType);
         return null;
+    }
+    void OnTimeout()
+    {
+        Reset();
     }
     private void Reset()
     {

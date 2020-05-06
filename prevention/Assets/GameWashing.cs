@@ -147,17 +147,25 @@ public class GameWashing : MonoBehaviour
         return null;
     }
     void OnGameDone()
-    {
-
+    {      
         sliderManager.isActive = false;
         anim.speed = 1;
         Events.PlayUISfx("stepWin");
-     //   print("Game ready state:  " + state + " actualGameSettings.cutscene " + actualGameSettings.cutscene);
-        if (actualGameSettings.cutscene == Cutscene.types.NAILS2)
+        print("Game ready state:  " + state + " actualGameSettings.cutscene " + actualGameSettings.cutscene);
+
+        if (gameSettings.Count == 2)
+        {
+            print("Termino el juego de un solo lavado");
+            Data.Instance.userData.AllLevelComplete();
+            Events.StopMusic();
+            Events.PlayMusicOnce("win");
+            Game.Instance.LevelComplete();
+            Game.Instance.Reset();
+            return;
+        } else if (actualGameSettings.cutscene == Cutscene.types.NAILS2)
         {
             Data.Instance.userData.AllLevelComplete();
-            StartCoroutine(Outro());
-           
+            StartCoroutine(Outro());           
         }            
         else {
             gameObject.SetActive(false);

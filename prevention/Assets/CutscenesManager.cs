@@ -6,6 +6,9 @@ public class CutscenesManager : MonoBehaviour
 {
     public List<Cutscene> all;
     public List<Cutscene> level_2;
+    public List<Cutscene> level_3;
+    public List<Cutscene> level_4;
+    public List<Cutscene> level_5;
     public Transform container;
 
     void Awake()
@@ -32,6 +35,30 @@ public class CutscenesManager : MonoBehaviour
         if (Data.Instance.userData.levelID == 2)
         {
             foreach (Cutscene c in level_2)
+            {
+                if (c.type == type && c.part == part)
+                    cutscene_to_add = c;
+            }
+        }
+        else if (Data.Instance.userData.levelID == 3)
+        {
+            foreach (Cutscene c in level_3)
+            {
+                if (c.type == type && c.part == part)
+                    cutscene_to_add = c;
+            }
+        }
+        else if (Data.Instance.userData.levelID == 4)
+        {
+            foreach (Cutscene c in level_4)
+            {
+                if (c.type == type && c.part == part)
+                    cutscene_to_add = c;
+            }
+        } else
+         if (Data.Instance.userData.levelID == 5)
+        {
+            foreach (Cutscene c in level_5)
             {
                 if (c.type == type && c.part == part)
                     cutscene_to_add = c;

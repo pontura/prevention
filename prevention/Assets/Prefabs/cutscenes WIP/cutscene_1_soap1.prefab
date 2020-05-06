@@ -2160,7 +2160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   part: 0
-  duration: 10.3
+  duration: 4
 --- !u!1 &62841750942611484
 GameObject:
   m_ObjectHideFlags: 0
@@ -2271,7 +2271,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 62841750664529479}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 3.5227702}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.242323}
 --- !u!212 &62841751009050878
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2351,7 +2351,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 62841750664529479}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 3.5227702}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.242323}
 --- !u!212 &62841751136016983
 SpriteRenderer:
   m_ObjectHideFlags: 0

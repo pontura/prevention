@@ -13917,7 +13917,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1786491513587682541
 Transform:
   m_ObjectHideFlags: 0
@@ -13974,6 +13974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2de2ad2ab184b3469a83c6783eb37f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dirt: {fileID: 0}
   forceState: 0
   gameSettings:
   - state: 0
@@ -60276,6 +60277,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   all: []
+  limitsX: {x: -1.72, y: 2.18}
+  limitsY: {x: 3.12, y: -1.8}
+  type: 0
 --- !u!1 &4763967323393933589
 GameObject:
   m_ObjectHideFlags: 0
@@ -60584,6 +60588,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   all: []
+  limitsX: {x: -1.72, y: 2.18}
+  limitsY: {x: 3.12, y: -1.8}
+  type: 0
 --- !u!1 &5022265476845172310
 GameObject:
   m_ObjectHideFlags: 0
@@ -72345,6 +72352,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   all: []
+  limitsX: {x: -1.72, y: 2.18}
+  limitsY: {x: 3.12, y: -1.8}
+  type: 0
 --- !u!1 &6893568758955839240
 GameObject:
   m_ObjectHideFlags: 0
@@ -78738,6 +78748,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   all: []
+  limitsX: {x: -1.72, y: 2.18}
+  limitsY: {x: 3.12, y: -1.8}
+  type: 0
 --- !u!1 &8197403153244439939
 GameObject:
   m_ObjectHideFlags: 0

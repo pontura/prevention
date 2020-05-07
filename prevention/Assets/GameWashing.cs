@@ -131,7 +131,7 @@ public class GameWashing : MonoBehaviour
     {
         Events.StopMusic();
         Events.PlayMusicOnce("lose");
-        Events.OnCutscene(actualGameSettings.cutscene, Cutscene.parts.OUTRO_BAD, Game.Instance.GameOver);
+        Events.OnCutscene(Cutscene.types.GAME_OVER, Cutscene.parts.INTRO, Game.Instance.GameOver);
         Destroy(gameObject);
     }
     GameSettings GetSettings()

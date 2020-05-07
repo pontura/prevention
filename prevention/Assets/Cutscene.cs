@@ -20,13 +20,13 @@ public class Cutscene : MonoBehaviour
         NAILS2,
         PULGAR1,
         PULGAR2,
-        OUTRO
+        OUTRO,
+        GAME_OVER
     }
     public enum parts
     {
         INTRO,
-        OUTRO_GOOD,
-        OUTRO_BAD
+        OUTRO_GOOD
     }
     System.Action OnReady;
     public void Init(System.Action OnReady)

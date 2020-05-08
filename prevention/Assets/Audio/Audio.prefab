@@ -240,6 +240,8 @@ MonoBehaviour:
     name: lose
   - clip: {fileID: 8300000, guid: e263a4f39b1e63c4aaf54c63cc7f2688, type: 3}
     name: win
+  - clip: {fileID: 8300000, guid: 9d58680558a27ed4e95b1b3b91c36455, type: 3}
+    name: splashOutro
 --- !u!82 &7647127440007392213
 AudioSource:
   m_ObjectHideFlags: 0

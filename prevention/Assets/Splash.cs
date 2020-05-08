@@ -18,6 +18,8 @@ public class Splash : MonoBehaviour
         logo.SetActive(true);
         enter.SetActive(false);
         Invoke("GotoGame", 4);
+        Events.StopMusic();
+        Events.PlayUISfx("splashOutro");
     }
     void GotoGame()
     {

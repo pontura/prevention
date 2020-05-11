@@ -64,8 +64,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 8044918938161438652, guid: e8089b4ad0bc3e44186194db2ab73372,
     type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: d80936de7278029418337b31e9187bc0, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -242,6 +242,8 @@ MonoBehaviour:
     name: win
   - clip: {fileID: 8300000, guid: 9d58680558a27ed4e95b1b3b91c36455, type: 3}
     name: splashOutro
+  - clip: {fileID: 8300000, guid: c5fb50999eb4e344dbcd47bc6f51bb58, type: 3}
+    name: click
 --- !u!82 &7647127440007392213
 AudioSource:
   m_ObjectHideFlags: 0

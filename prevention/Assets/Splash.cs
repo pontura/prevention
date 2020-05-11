@@ -15,6 +15,7 @@ public class Splash : MonoBehaviour
 
     public void OnClicked()
     {
+        Events.PlayUISfx("click");
         logo.SetActive(true);
         enter.SetActive(false);
         Invoke("GotoGame", 4);

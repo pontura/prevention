@@ -24,6 +24,8 @@ public class LevelButton : MonoBehaviour
     }
     public void OnClicked()
     {
+        Events.PlayUISfx("click");
         levelSelector.OpenLevel(levelData.id);
+        Events.PlayMusic("ingame");
     }
 }

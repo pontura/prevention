@@ -12,6 +12,6 @@ public class DemoScene : MonoBehaviour
 
     void Delayed()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Splash");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("LevelSelector");
     }
 }

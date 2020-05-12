@@ -102,6 +102,7 @@ public class ItemsListDestroyer : MonoBehaviour
             }
             if (Random.Range(0, 100) < prob)
             {
+                Events.PlayUISfx("respawn");
                 if (Data.Instance.userData.levelID > 2)
                     MovePart(go);
                 else
@@ -109,6 +110,7 @@ public class ItemsListDestroyer : MonoBehaviour
             }
             else
             {
+                Events.PlayUISfx("die");
                 Die(go);
             }
         }

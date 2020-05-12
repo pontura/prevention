@@ -23,10 +23,12 @@ public class Summary : MonoBehaviour
     }
     public void LevelSelector()
     {
+        Events.PlayUISfx("click");
         Data.Instance.LoadScene("LevelSelector");
     }
     public void Replay()
     {
+        Events.PlayUISfx("click");
         Game.Instance.Replay();
     }
 }

@@ -281,6 +281,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: cutscene_5_soap1
       objectReference: {fileID: 0}
+    - target: {fileID: 6259163853292189092, guid: 2aad7361ca4dc4a458c0bcf78d5e91f4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6259163853292189093, guid: 2aad7361ca4dc4a458c0bcf78d5e91f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -419,7 +424,7 @@ PrefabInstance:
     - target: {fileID: 7019356396219190843, guid: 0add80c35b0a8054892796fa2250dad7,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7019356396219190842, guid: 0add80c35b0a8054892796fa2250dad7,
         type: 3}

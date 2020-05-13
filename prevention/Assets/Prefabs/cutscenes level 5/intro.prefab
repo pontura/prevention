@@ -17982,7 +17982,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6259163853292189093}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -7.479484}
 --- !u!212 &6259163853098791708
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18062,7 +18062,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6259163853292189093}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -7.479484}
 --- !u!212 &6259163853227616693
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18124,7 +18124,7 @@ GameObject:
   - component: {fileID: 6259163854163871760}
   - component: {fileID: 2936503289644847192}
   m_Layer: 0
-  m_Name: cutscene_5_soap1
+  m_Name: intro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18178,7 +18178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   part: 0
-  duration: 8
+  duration: 9
 --- !u!1 &6364007435173835141
 GameObject:
   m_ObjectHideFlags: 0

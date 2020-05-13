@@ -29,4 +29,15 @@ public class Summary : MonoBehaviour
     {
         Game.Instance.Replay();
     }
+    public void Next()
+    {        
+        if (Data.Instance.userData.levelID == 5)
+            Data.Instance.LoadScene("LevelSelector");
+        else
+        {
+            Data.Instance.userData.Next();
+            Data.Instance.LoadScene("Game");
+        }
+            
+    }
 }

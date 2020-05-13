@@ -122,6 +122,8 @@ public class Game : MonoBehaviour
             s.score = gData.soap_score[id];
 
             s = GetGameSettings(gw, GameWashing.states.GAME2);
+            if (s == null)
+                return;
             s.gameDuration = gData.soap_duration[id];
             s.score = gData.soap_score[id];
 

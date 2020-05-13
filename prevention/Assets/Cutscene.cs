@@ -35,9 +35,12 @@ public class Cutscene : MonoBehaviour
         Invoke("Done", duration);
     }
     void Done()
-    {        
-        OnReady();
-        OnReady = null;
+    {
+        if (OnReady != null)
+        {
+            OnReady();
+            OnReady = null;
+        }
         Destroy(gameObject);
     }
 }

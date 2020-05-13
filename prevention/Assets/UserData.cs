@@ -19,6 +19,12 @@ public class UserData : MonoBehaviour
     {
         Events.OnGameDone -= OnGameDone;
     }
+    public void Next()
+    {
+        levelID++;
+        if (levelID > 5)
+            levelID = 5;
+    }
     void LoadScores()
     {
         levelUnlocked = 1;

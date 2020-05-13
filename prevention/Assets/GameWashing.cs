@@ -155,13 +155,8 @@ public class GameWashing : MonoBehaviour
 
         if (gameSettings.Count == 2)
         {
-            print("Termino el juego de un solo lavado");
             Data.Instance.userData.AllLevelComplete();
-            Events.StopMusic();
-            Events.PlayMusicOnce("win");
-            Game.Instance.LevelComplete();
-            Game.Instance.Reset();
-            return;
+            StartCoroutine(OutroSmall());
         } else if (actualGameSettings.cutscene == Cutscene.types.NAILS2)
         {
             Data.Instance.userData.AllLevelComplete();
@@ -171,6 +166,19 @@ public class GameWashing : MonoBehaviour
             gameObject.SetActive(false);
             Events.OnCutscene(actualGameSettings.cutscene, Cutscene.parts.OUTRO_GOOD, NextState);
         }
+    }
+    IEnumerator OutroSmall()
+    {
+        yield return new WaitForEndOfFrame();
+        Events.OnCutscene(actualGameSettings.cutscene, Cutscene.parts.OUTRO_GOOD, null);        
+        anim.speed = 1;        
+        print("Termino el juego de un solo lavado");
+        Data.Instance.userData.AllLevelComplete();
+        Events.StopMusic();
+        Events.PlayMusicOnce("win");
+        yield return new WaitForSeconds(4);
+        Game.Instance.LevelComplete();
+        Game.Instance.Reset();
     }
     IEnumerator Outro()
     {

@@ -162,6 +162,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   all: []
+  limitsX: {x: -1.72, y: 2.18}
+  limitsY: {x: 3.12, y: -1.8}
+  type: 0
 --- !u!1 &188351505787678874
 GameObject:
   m_ObjectHideFlags: 0
@@ -5855,7 +5858,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &948841295691609943
 Transform:
   m_ObjectHideFlags: 0
@@ -8461,6 +8464,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   all: []
+  limitsX: {x: -1.72, y: 2.18}
+  limitsY: {x: 3.12, y: -1.8}
+  type: 0
 --- !u!1 &2906822322024611910
 GameObject:
   m_ObjectHideFlags: 0
@@ -13393,6 +13399,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   all: []
+  limitsX: {x: -1.72, y: 2.18}
+  limitsY: {x: 3.12, y: -1.8}
+  type: 0
 --- !u!1 &3332092168051714349
 GameObject:
   m_ObjectHideFlags: 0
@@ -13874,6 +13883,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   all: []
+  limitsX: {x: -1.72, y: 2.18}
+  limitsY: {x: 3.12, y: -1.8}
+  type: 0
 --- !u!1 &3671841319477634964
 GameObject:
   m_ObjectHideFlags: 0
@@ -26263,8 +26275,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5904608359590652377}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 367.8566, y: 138.78879, z: -27.530554}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.07, y: -0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 948841295691609943}
@@ -77939,7 +77951,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8444061041490443004}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -367.7866, y: -139.18878, z: 27.530554}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -77988,6 +78000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2de2ad2ab184b3469a83c6783eb37f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dirt: {fileID: -8944337957979413314, guid: 80b78108d1ca782468e6facb1934dbc0, type: 3}
   forceState: 0
   gameSettings:
   - state: 0
@@ -78018,7 +78031,7 @@ MonoBehaviour:
     cutscene: 3
     gameDuration: 15
     score: 60
-    gestureType: 3
+    gestureType: 19
     introClip: {fileID: 7400000, guid: 2fbb7cfa3d20e904e88858c940c050d5, type: 2}
     idleClip: {fileID: 7400000, guid: b34ac323eb6eb5843a412b21fede6c24, type: 2}
     clips:
@@ -78028,7 +78041,7 @@ MonoBehaviour:
     cutscene: 4
     gameDuration: 15
     score: 60
-    gestureType: 11
+    gestureType: 20
     introClip: {fileID: 7400000, guid: 418b5b90c52b7dc448fd4eb7abd0c20e, type: 2}
     idleClip: {fileID: 7400000, guid: 0dc46c46e71ec9e45bd17c4ae4d7a0a1, type: 2}
     clips:
@@ -78038,7 +78051,7 @@ MonoBehaviour:
     cutscene: 5
     gameDuration: 16
     score: 100
-    gestureType: 6
+    gestureType: 21
     introClip: {fileID: 7400000, guid: 4a0fa423912550e40bbfca87ea16e287, type: 2}
     idleClip: {fileID: 7400000, guid: 32fb98bec6df6474d9ebe368f2bc7ec3, type: 2}
     clips:
@@ -78047,17 +78060,17 @@ MonoBehaviour:
     cutscene: 8
     gameDuration: 16
     score: 40
-    gestureType: 14
+    gestureType: 22
     introClip: {fileID: 7400000, guid: ae8e3d697bced9e4dbc520cf46dba588, type: 2}
     idleClip: {fileID: 7400000, guid: 75e1fb97f9ea31b4eb8a5509c31aacab, type: 2}
     clips:
     - {fileID: 7400000, guid: 75e1fb97f9ea31b4eb8a5509c31aacab, type: 2}
-    - {fileID: 7400000, guid: 75e1fb97f9ea31b4eb8a5509c31aacab, type: 2}
+    - {fileID: 7400000, guid: 3c9132fa149402448bb408e4d8a6ac08, type: 2}
   - state: 10
     cutscene: 9
     gameDuration: 16
     score: 40
-    gestureType: 15
+    gestureType: 23
     introClip: {fileID: 7400000, guid: 781c04525e46cbe49992f2c45ad558cf, type: 2}
     idleClip: {fileID: 7400000, guid: 568b7b80fca4508488ade6a201f6112a, type: 2}
     clips:
@@ -78067,7 +78080,7 @@ MonoBehaviour:
     cutscene: 6
     gameDuration: 16
     score: 55
-    gestureType: 12
+    gestureType: 24
     introClip: {fileID: 7400000, guid: 954dbf2c8d2e1eb4596a1c79dea3831a, type: 2}
     idleClip: {fileID: 7400000, guid: 5c3c8e4aa28e6e14ab478c25c157c2f5, type: 2}
     clips:
@@ -78077,7 +78090,7 @@ MonoBehaviour:
     cutscene: 7
     gameDuration: 16
     score: 55
-    gestureType: 13
+    gestureType: 25
     introClip: {fileID: 7400000, guid: 4ef5fbbbd38d606499329cf894018edd, type: 2}
     idleClip: {fileID: 7400000, guid: 779b7509f649d6c4cb3d2b612707af5a, type: 2}
     clips:
@@ -84417,7 +84430,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8495234287148705114
 Transform:
   m_ObjectHideFlags: 0

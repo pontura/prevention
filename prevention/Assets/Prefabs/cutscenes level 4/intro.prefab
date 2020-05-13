@@ -30121,7 +30121,7 @@ GameObject:
   - component: {fileID: 7019356395348161423}
   - component: {fileID: 2266516778768985031}
   m_Layer: 0
-  m_Name: cutscene_4_soap1
+  m_Name: intro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30178,7 +30178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   part: 0
-  duration: 9.5
+  duration: 11.5
 --- !u!1 &7019356396413765761
 GameObject:
   m_ObjectHideFlags: 0

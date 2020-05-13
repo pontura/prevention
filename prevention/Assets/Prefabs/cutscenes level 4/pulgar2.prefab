@@ -10697,7 +10697,7 @@ Transform:
   - {fileID: 5690964572840867928}
   m_Father: {fileID: 1784202672393678542}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 127.69706}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 121.303535}
 --- !u!1 &1746714915029489862
 GameObject:
   m_ObjectHideFlags: 0
@@ -15486,7 +15486,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 69b6916278996d846bc331fe7db8c93f, type: 2}
+  - {fileID: 2100000, guid: bd2138a90fd75184d98b57d0b9de5f1d, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -21263,7 +21263,7 @@ Transform:
   m_GameObject: {fileID: 3652704676725526604}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.12, z: 3}
-  m_LocalScale: {x: 0.90273, y: 0.90273, z: 0.90273}
+  m_LocalScale: {x: -0.90273, y: 0.90273, z: 0.90273}
   m_Children: []
   m_Father: {fileID: 7334693624030408281}
   m_RootOrder: 0
@@ -21306,7 +21306,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fa02593a80079eb4e9267483a408cbc8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 62fa9b07e0e9c6e4492fa3924ee53b73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -27069,7 +27069,7 @@ Transform:
   - {fileID: 2799153148076042622}
   m_Father: {fileID: 7012307147843228471}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -65.35807}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -56.911285}
 --- !u!1 &6143220215710384198
 GameObject:
   m_ObjectHideFlags: 0

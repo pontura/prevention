@@ -326,10 +326,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2772123144193836104}
     m_Modifications:
-    - target: {fileID: 7647127439686769310, guid: 4cbb2d12c7455f34eaf7bbe7a0118937,
+    - target: {fileID: 7647127438171603919, guid: 4cbb2d12c7455f34eaf7bbe7a0118937,
         type: 3}
-      propertyPath: m_Name
-      value: Audio
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d80936de7278029418337b31e9187bc0, type: 3}
+    - target: {fileID: 7647127438171603919, guid: 4cbb2d12c7455f34eaf7bbe7a0118937,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7647127439686769305, guid: 4cbb2d12c7455f34eaf7bbe7a0118937,
         type: 3}
@@ -400,6 +405,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.8305335
+      objectReference: {fileID: 0}
+    - target: {fileID: 7647127439686769310, guid: 4cbb2d12c7455f34eaf7bbe7a0118937,
+        type: 3}
+      propertyPath: m_Name
+      value: Audio
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cbb2d12c7455f34eaf7bbe7a0118937, type: 3}

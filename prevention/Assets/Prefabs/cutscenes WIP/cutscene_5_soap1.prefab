@@ -29115,6 +29115,7 @@ GameObject:
   - component: {fileID: 7019356396219190842}
   - component: {fileID: 7019356395348161423}
   - component: {fileID: 2266516778768985031}
+  - component: {fileID: 2429151968885216512}
   m_Layer: 0
   m_Name: cutscene_5_soap1
   m_TagString: Untagged
@@ -29175,6 +29176,19 @@ MonoBehaviour:
   type: 1
   part: 0
   duration: 9.5
+--- !u!114 &2429151968885216512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7019356396219190843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d156a234643ccac4ab594fe65ef80392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips: []
 --- !u!1 &7019356396413765761
 GameObject:
   m_ObjectHideFlags: 0

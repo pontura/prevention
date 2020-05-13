@@ -9220,7 +9220,7 @@ GameObject:
   - component: {fileID: 2031930092464616018}
   - component: {fileID: 2031930092464616019}
   m_Layer: 0
-  m_Name: scratch1
+  m_Name: alcohol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9234,7 +9234,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2031930092464616045}
   m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
-  m_LocalPosition: {x: 0.04, y: 1.9700083, z: 0.6}
+  m_LocalPosition: {x: 0.64, y: 3.07, z: 0.6}
   m_LocalScale: {x: 0.74539006, y: 0.74539006, z: 0.74539006}
   m_Children: []
   m_Father: {fileID: 1786491513372227022}
@@ -10073,7 +10073,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 200
+      scalar: 0
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -12401,16 +12401,16 @@ ParticleSystem:
           time: 0
           value: 0
           inSlope: 0
-          outSlope: 1
+          outSlope: 0
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 1
+          time: 0.17041016
           value: 1
           inSlope: 1
-          outSlope: 0
+          outSlope: 1
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
@@ -18753,7 +18753,7 @@ GameObject:
   - component: {fileID: 2031930093071316108}
   - component: {fileID: 2031930093071316109}
   m_Layer: 0
-  m_Name: scratch1 (1)
+  m_Name: alcohol2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19606,7 +19606,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 200
+      scalar: 0
       minScalar: 10
       maxCurve:
         serializedVersion: 2

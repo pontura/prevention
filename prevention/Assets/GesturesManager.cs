@@ -32,6 +32,13 @@ public class GesturesManager : MonoBehaviour
         SLIDE_ZIGZAG_1_ANIMATED,
         SLIDE_ZIGZAG_2_ANIMATED,
         SLIDER_S_LEFT_ANIMATED,
-        SLIDER_S_RIGHT_ANIMATED
+        SLIDER_S_RIGHT_ANIMATED,
+        CENTER_ANIMATED_2,
+        CURVA_ROTA_LEFT,
+        CURVA_ROTA_RIGHT,
+        GANCHO_LEFT,
+        GANCHO_RIGHT,
+        OVALO_LEFT,
+        OVALO_RIGHT
     }
 }

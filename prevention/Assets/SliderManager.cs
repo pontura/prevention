@@ -9,10 +9,14 @@ public class SliderManager : MonoBehaviour
     SlidersManager manager;
     bool isPlaying;
     public string helperText;
+    public SliderButton sliderButton_to_instantiate;
     public SliderButton sliderButton;
 
     public virtual void Start()
     {
+        sliderButton = Instantiate(sliderButton_to_instantiate);
+        sliderButton.transform.SetParent(transform);
+        sliderButton.transform.transform.localScale = Vector3.one;
         anim = GetComponent<Animation>();
     }
     public virtual void Init(SlidersManager manager)

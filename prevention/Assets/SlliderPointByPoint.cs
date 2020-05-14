@@ -16,6 +16,7 @@ public class SlliderPointByPoint : SliderManager
    
     public override void Start()
     {
+        base.Start();
         Invoke("Init", 0.1f);
     }
     void Init()

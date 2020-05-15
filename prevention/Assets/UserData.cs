@@ -65,6 +65,7 @@ public class UserData : MonoBehaviour
             SaveNewHiscore(newScore);
 
         LoadScores();
+        thisLevelscores.Clear();
     }
     void SaveNewHiscore(float newScore)
     {

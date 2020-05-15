@@ -116,55 +116,32 @@ public class Game : MonoBehaviour
         int id = 0;
         foreach (GameWashing gw in levels)
         {
-            GameWashing.GameSettings s;
-            s = GetGameSettings(gw, GameWashing.states.GAME1);
-            s.gameDuration = gData.soap_duration[id];
-            s.score = gData.soap_score[id];
+            SetGameSettings(gw, GameWashing.states.GAME1, gData.soap_duration[id], gData.soap_score[id]);
+            SetGameSettings(gw, GameWashing.states.GAME2, gData.soap_duration[id], gData.soap_score[id]);
 
-            s = GetGameSettings(gw, GameWashing.states.GAME2);
-            if (s == null)
-                return;
-            s.gameDuration = gData.soap_duration[id];
-            s.score = gData.soap_score[id];
+            SetGameSettings(gw, GameWashing.states.VERTICAL1,gData.vertical[id], gData.vertical_score[id]);
+            SetGameSettings(gw, GameWashing.states.VERTICAL2, gData.vertical[id], gData.vertical_score[id]);
 
-            s = GetGameSettings(gw, GameWashing.states.VERTICAL1);
-            s.gameDuration = gData.vertical[id];
-            s.score = gData.vertical_score[id];
+            SetGameSettings(gw, GameWashing.states.CIRCULOS, gData.circles[id], gData.circles_score[id]);
 
-            s = GetGameSettings(gw, GameWashing.states.VERTICAL2);
-            s.gameDuration = gData.vertical[id];
-            s.score = gData.vertical_score[id];
+            SetGameSettings(gw, GameWashing.states.PULGAR1, gData.pulgar[id], gData.pulgar_score[id]);
+            SetGameSettings(gw, GameWashing.states.PULGAR2, gData.pulgar[id], gData.pulgar_score[id]);
 
-            s = GetGameSettings(gw, GameWashing.states.CIRCULOS);
-            s.gameDuration = gData.circles[id];
-            s.score = gData.circles_score[id];
-
-            s = GetGameSettings(gw, GameWashing.states.PULGAR1);
-            s.gameDuration = gData.pulgar[id];
-            s.score = gData.pulgar_score[id];
-
-            s = GetGameSettings(gw, GameWashing.states.PULGAR2);
-            s.gameDuration = gData.pulgar[id];
-            s.score = gData.pulgar_score[id];
-
-            s = GetGameSettings(gw, GameWashing.states.PUNIO1);
-            s.gameDuration = gData.nails[id];
-            s.score = gData.nails_score[id];
-
-            s = GetGameSettings(gw, GameWashing.states.PUNIO2);
-            s.gameDuration = gData.nails[id];
-            s.score = gData.nails_score[id];
+            SetGameSettings(gw, GameWashing.states.PUNIO1, gData.nails[id], gData.nails_score[id]);
+            SetGameSettings(gw, GameWashing.states.PUNIO2, gData.nails[id], gData.nails_score[id]);
 
             id++;
         }
     }
-    GameWashing.GameSettings GetGameSettings(GameWashing gameWashing, GameWashing.states state)
+    void SetGameSettings(GameWashing gameWashing, GameWashing.states state, int duration, int score)
     {
         foreach(GameWashing.GameSettings settings in gameWashing.gameSettings)
         {
             if (settings.state == state)
-                return settings;
+            {
+                settings.gameDuration = duration;
+                settings.score = score;
+            }
         }
-        return null;
     }
 }

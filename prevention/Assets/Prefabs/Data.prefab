@@ -372,28 +372,28 @@ MonoBehaviour:
   - id: 1
     stars: 0
     score: 0
-    scoreForStar_1: 0.3
-    scoreForStar_2: 0.65
+    scoreForStar_1: 0.45
+    scoreForStar_2: 0.72
   - id: 2
     stars: 0
     score: 0
-    scoreForStar_1: 0.35
-    scoreForStar_2: 0.52
+    scoreForStar_1: 0.45
+    scoreForStar_2: 0.65
   - id: 3
     stars: 0
     score: 0
-    scoreForStar_1: 0.21
-    scoreForStar_2: 0.32
+    scoreForStar_1: 0.25
+    scoreForStar_2: 0.36
   - id: 4
     stars: 0
     score: 0
-    scoreForStar_1: 0.35
-    scoreForStar_2: 0.55
+    scoreForStar_1: 0.22
+    scoreForStar_2: 0.35
   - id: 5
     stars: 0
     score: 0
-    scoreForStar_1: 0.3
-    scoreForStar_2: 0.55
+    scoreForStar_1: 0.2
+    scoreForStar_2: 0.4
   thisLevelscores: []
   levelUnlocked: 0
   newScore: 0

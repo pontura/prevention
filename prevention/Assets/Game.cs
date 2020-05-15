@@ -45,7 +45,7 @@ public class Game : MonoBehaviour
     }
     public void GameOver()
     {
-        Data.Instance.LoadScene("GameOver");
+        Data.Instance.LoadScene("LevelSelector");
     }
     public void Replay()
     {

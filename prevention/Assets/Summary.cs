@@ -8,6 +8,7 @@ public class Summary : MonoBehaviour
     public GameObject panel;
     public Stars stars;
     public Text scoreField;
+    public Button buttonNext;
 
     void Start()
     {
@@ -20,6 +21,10 @@ public class Summary : MonoBehaviour
         stars.Init(s);
         scoreField.text = Mathf.Round(Data.Instance.userData.newScore * 100).ToString();
         panel.SetActive(true);
+        if (Data.Instance.userData.levelID == 5)
+            buttonNext.interactable = false;
+        else
+            buttonNext.interactable = true;
     }
     public void LevelSelector()
     {
@@ -30,14 +35,8 @@ public class Summary : MonoBehaviour
         Game.Instance.Replay();
     }
     public void Next()
-    {        
-        if (Data.Instance.userData.levelID == 5)
-            Data.Instance.LoadScene("LevelSelector");
-        else
-        {
-            Data.Instance.userData.Next();
-            Data.Instance.LoadScene("Game");
-        }
-            
+    {    
+        Data.Instance.userData.Next();
+        Data.Instance.LoadScene("Game");            
     }
 }

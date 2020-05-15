@@ -10,6 +10,8 @@ public class SfxManager : MonoBehaviour {
 
     float pitchStep = 0.0833333f;
 
+    int maxSfxVoices = 16;
+
     [Serializable]
     public class SfxClip {
         public AudioClip clip;
@@ -49,17 +51,30 @@ public class SfxManager : MonoBehaviour {
         }
     }
 
+    int count;
     void PlaySfxRandom(string name) {
-        SfxClip sc = sfxClips.Find(x => x.name == name);
-        if (sc != null) {
-            if (!asource.isPlaying) {
-                asource.pitch = 0.9f + UnityEngine.Random.value * 0.2f;
-                asource.PlayOneShot(sc.clip);
-            }else if (asource.clip != sc.clip) {
-                asource.pitch = 0.9f + UnityEngine.Random.value * 0.2f;
-                asource.PlayOneShot(sc.clip);
+        if (count < maxSfxVoices) {
+            SfxClip sc = sfxClips.Find(x => x.name == name);
+            if (sc != null) {
+                if (!asource.isPlaying) {
+                    asource.pitch = 0.9f + UnityEngine.Random.value * 0.2f;
+                    asource.PlayOneShot(sc.clip, 0.5f + UnityEngine.Random.value * 0.5f);
+                    count++;
+                    StartCoroutine(StartMethod(sc.clip.length));
+                } else if (asource.clip != sc.clip) {
+                    asource.pitch = 0.9f + UnityEngine.Random.value * 0.2f;
+                    asource.PlayOneShot(sc.clip, 0.5f + UnityEngine.Random.value * 0.5f);
+                    count++;
+                    StartCoroutine(StartMethod(sc.clip.length));
+                }
             }
         }
+    }
+
+    private IEnumerator StartMethod(float clipLength) {
+        yield return new WaitForSeconds(clipLength);
+
+        count--;
     }
 
     void PlaySfxTransp(string name,int pitch) {

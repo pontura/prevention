@@ -28,15 +28,19 @@ public class Summary : MonoBehaviour
     }
     public void LevelSelector()
     {
+        Events.PlayUISfx("click");
         Data.Instance.LoadScene("LevelSelector");
     }
     public void Replay()
     {
+        Events.PlayUISfx("click");
         Game.Instance.Replay();
     }
     public void Next()
-    {    
+    {
+        Events.PlayUISfx("click");
         Data.Instance.userData.Next();
-        Data.Instance.LoadScene("Game");            
+        Events.PlayMusic("ingame");
+        Data.Instance.LoadScene("Game");        
     }
 }

@@ -244,6 +244,12 @@ MonoBehaviour:
     name: splashOutro
   - clip: {fileID: 8300000, guid: c5fb50999eb4e344dbcd47bc6f51bb58, type: 3}
     name: click
+  - clip: {fileID: 8300000, guid: 4aa4f066b07107e42bf7dba763d0b9d9, type: 3}
+    name: suspensev41
+  - clip: {fileID: 8300000, guid: 8485369e582ee3544a7d169c46ca2344, type: 3}
+    name: crash
+  - clip: {fileID: 8300000, guid: 451044ccd63445b4faa5ef94d81a4fa4, type: 3}
+    name: splash
 --- !u!82 &7647127440007392213
 AudioSource:
   m_ObjectHideFlags: 0
@@ -394,6 +400,10 @@ MonoBehaviour:
     name: stepWin
   - clip: {fileID: 8300000, guid: 324ffb3e870d55945a019baafb9110ed, type: 3}
     name: step
+  - clip: {fileID: 8300000, guid: d3c296e3f5125044c90dcc664b3ba3c9, type: 3}
+    name: respawn_
+  - clip: {fileID: 8300000, guid: b50757e9721d0a74292debb95de4feae, type: 3}
+    name: die_
 --- !u!82 &7647127440060466509
 AudioSource:
   m_ObjectHideFlags: 0

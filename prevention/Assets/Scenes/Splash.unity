@@ -604,7 +604,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f9515a0d5a343484eb830e87f2cca3dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 69e5c31f30ac53e4aa9504a32c96e1ed, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1006,6 +1006,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5416390950960764216, guid: 80f19085b881c0444ab02c961d6e387e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80f19085b881c0444ab02c961d6e387e, type: 3}
 --- !u!224 &667282760 stripped
@@ -1274,7 +1279,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6a04b1b1c40c96e408523e30eb57e07b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9fc6fcd9f61f667468faee2f823b57c4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1954,13 +1959,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549804725}
-  m_LocalRotation: {x: -0, y: -0, z: 0.24107487, w: 0.9705065}
+  m_LocalRotation: {x: -0, y: -0, z: -0.18654464, w: 0.9824465}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.9529886, y: 0.9529886, z: 0.9529886}
   m_Children: []
   m_Father: {fileID: 1249521580}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 27.900002}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -21.502}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 612, y: -210}
@@ -1984,7 +1989,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 69e5c31f30ac53e4aa9504a32c96e1ed, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f9515a0d5a343484eb830e87f2cca3dd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2158,6 +2163,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Data
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772123144193836108, guid: aafe62aa95b491241a29b48be26678cf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2772123144193836104, guid: aafe62aa95b491241a29b48be26678cf,
         type: 3}

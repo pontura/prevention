@@ -78,6 +78,7 @@
     <Compile Include="Assets\GameWashing.cs" />
     <Compile Include="Assets\GesturesManager.cs" />
     <Compile Include="Assets\HelperManager.cs" />
+    <Compile Include="Assets\Info.cs" />
     <Compile Include="Assets\ItemDraggerManager.cs" />
     <Compile Include="Assets\ItemsListDestroyer.cs" />
     <Compile Include="Assets\ItemSoap.cs" />

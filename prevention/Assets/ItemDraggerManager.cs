@@ -67,6 +67,9 @@ public class ItemDraggerManager : MonoBehaviour
         }
         else
         {
+            Animation anim = item_idle.GetComponent<Animation>();
+            if (anim != null)
+                anim.Play();
             item_idle.SetActive(true);
             item_drag.SetActive(false);
         }

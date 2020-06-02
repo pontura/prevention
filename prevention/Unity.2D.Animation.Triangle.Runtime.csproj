@@ -5,9 +5,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E08C0643-0A13-BF9B-F68E-2FDBBB855F02}</ProjectGuid>
+    <ProjectGuid>{BE432327-3DF7-E244-6ACE-2F6E21B800BE}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AssemblyName>UnityEngine.TestRunner</AssemblyName>
+    <AssemblyName>Unity.2D.Animation.Triangle.Runtime</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
@@ -47,6 +47,12 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+    </Reference>
     <Reference Include="Managed/UnityEngine/UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2019.2.5f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -242,8 +248,14 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>C:/projects/prevention/git/prevention/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+    <Reference Include="DOTween">
+      <HintPath>Assets/Demigiant/DOTween/DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTweenEditor">
+      <HintPath>Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>C:/projects/prevention/git/prevention/Library/PackageCache/com.unity.2d.common@1.2.0-preview.1/Tests/Editor/Lib/NSubstitute/NSubstitute.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2019.2.5f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -592,103 +604,91 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\AssemblyInfo.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Assertions\AllocatingGCMemoryConstraint.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Assertions\ConstraintsExtensions.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Assertions\InvalidSignatureException.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Assertions\Is.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Assertions\LogAssert.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Assertions\LogScope\ILogScope.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Assertions\LogScope\LogEvent.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Assertions\LogScope\LogMatch.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Assertions\LogScope\LogScope.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Assertions\UnexpectedLogMessageException.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Assertions\UnhandledLogMessageException.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Assertions\UnityTestTimeoutException.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\ActionDelegator.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Attributes\UnityCombinatorialStrategy.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Attributes\UnityPlatformAttribute.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Attributes\UnitySetUpAttribute.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Attributes\UnityTearDownAttribute.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Attributes\UnityTestAttribute.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\BaseDelegator.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Commands\BeforeAfterTestCommandBase.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Commands\BeforeAfterTestCommandState.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Commands\EnumerableApplyChangesToContextCommand.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Commands\EnumerableSetUpTearDownCommand.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Commands\EnumerableTestMethodCommand.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Commands\ImmediateEnumerableCommand.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Commands\OuterUnityTestActionCommand.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Commands\SetUpTearDownCommand.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Commands\TestActionCommand.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Commands\TestCommandPcHelper.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\ConstructDelegator.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Filters\AssemblyNameFilter.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Filters\CategoryFilterExtended.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\IStateSerializer.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\CompositeWorkItem.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\CoroutineTestWorkItem.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\DefaultTestWorkItem.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\FailCommand.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\IEnumerableTestMethodCommand.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\PlaymodeWorkItemFactory.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\RestoreTestContextAfterDomainReload.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\UnityLogCheckDelegatingCommand.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\UnityTestAssemblyRunner.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\UnityTestExecutionContext.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\UnityWorkItem.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\UnityWorkItemDataHolder.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\WorkItemFactory.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\TestExtensions.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\TestResultExtensions.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\UnityTestAssemblyBuilder.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\Callbacks\PlayModeRunnerCallback.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\Callbacks\RemoteTestResultSender.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\Callbacks\TestResultRenderer.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\Callbacks\TestResultRendererCallback.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\ITestRunnerListener.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\Messages\IEditModeTestYieldInstruction.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\PlaymodeTestsController.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\PlaymodeTestsControllerSettings.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\RemoteHelpers\IRemoteTestResultDataFactory.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\RemoteHelpers\PlayerConnectionMessageIds.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\RemoteHelpers\RemoteTestData.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\RemoteHelpers\RemoteTestResultData.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\RemoteHelpers\RemoteTestResultDataFactory.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\RemoteHelpers\RemoteTestResultDataWithTestData.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\TestEnumeratorWrapper.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\TestListenerWrapper.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\TestPlatform.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\TestRunnerFilter.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\AssemblyProvider\AssemblyLoadProxy.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\AssemblyProvider\AssemblyWrapper.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\AssemblyProvider\IAssemblyLoadProxy.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\AssemblyProvider\IAssemblyWrapper.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\AssemblyProvider\IScriptingRuntimeProxy.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\AssemblyProvider\ITestAssemblyProvider.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\AssemblyProvider\PlayerTestAssemblyProvider.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\AssemblyProvider\ScriptingRuntimeProxy.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\AttributeHelper.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\ColorEqualityComparer.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\CoroutineRunner.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\FloatEqualityComparer.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\IOuterUnityTestAction.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\IPostBuildCleanup.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\IPrebuildSceneSetup.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\MonoBehaviourTest\IMonoBehaviourTest.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\MonoBehaviourTest\MonoBehaviourTest.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\PostBuildCleanupAttribute.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\PrebuildSceneSetupAttribute.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\QuaternionEqualityComparer.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\StacktraceFilter.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\Utils.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\Vector2ComparerWithEqualsOperator.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\Vector2EqualityComparer.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\Vector3ComparerWithEqualsOperator.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\Vector3EqualityComparer.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\Vector4ComparerWithEqualsOperator.cs" />
-    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\Vector4EqualityComparer.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Behavior.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Configuration.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Enums.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Geometry\Contour.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Geometry\Edge.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Geometry\ExtensionMethods.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Geometry\IEdge.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Geometry\IPolygon.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Geometry\ISegment.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Geometry\ITriangle.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Geometry\Point.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Geometry\Polygon.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Geometry\Rectangle.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Geometry\RegionPointer.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Geometry\Segment.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Geometry\Vertex.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\IO\DebugWriter.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\IO\FileProcessor.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\IO\IFileFormat.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\IO\IMeshFormat.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\IO\InputTriangle.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\IO\IPolygonFormat.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\IO\TriangleFormat.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\IO\TriangleReader.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\IO\TriangleWriter.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\IPredicates.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Log.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Logging\ILog.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Logging\ILogItem.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Logging\LogItem.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Mesh.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Meshing\Algorithm\Dwyer.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Meshing\Algorithm\Incremental.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Meshing\Algorithm\SweepLine.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Meshing\ConstraintMesher.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Meshing\ConstraintOptions.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Meshing\Converter.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Meshing\Data\BadSubseg.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Meshing\Data\BadTriangle.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Meshing\Data\BadTriQueue.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Meshing\GenericMesher.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Meshing\IConstraintMesher.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Meshing\IMesh.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Meshing\IQualityMesher.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Meshing\Iterators\EdgeIterator.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Meshing\Iterators\RegionIterator.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Meshing\ITriangulator.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Meshing\QualityMesher.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Meshing\QualityOptions.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\MeshValidator.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\NewLocation.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Properties\AssemblyInfo.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\RobustPredicates.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Smoothing\ISmoother.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Smoothing\SimpleSmoother.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Smoothing\VoronoiFactory.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Tools\AdjacencyMatrix.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Tools\CuthillMcKee.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Tools\Interpolation.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Tools\IntersectionHelper.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Tools\PolygonValidator.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Tools\QualityMeasure.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Tools\Statistic.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Tools\TriangleQuadTree.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Tools\VertexSorter.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Topology\DCEL\DcelMesh.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Topology\DCEL\Face.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Topology\DCEL\HalfEdge.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Topology\DCEL\Vertex.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Topology\Osub.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Topology\Otri.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Topology\SubSegment.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Topology\Triangle.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\TriangleLocator.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\TrianglePool.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\TriangleSampler.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Voronoi\BoundedVoronoi.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Voronoi\DefaultVoronoiFactory.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Voronoi\IVoronoiFactory.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Voronoi\Legacy\BoundedVoronoiLegacy.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Voronoi\Legacy\IVoronoi.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Voronoi\Legacy\SimpleVoronoi.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Voronoi\Legacy\VoronoiRegion.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Voronoi\StandardVoronoi.cs" />
+    <Compile Include="Packages\com.unity.2d.animation\Runtime\Triangle\Voronoi\VoronoiBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Demigiant\DOTween\DOTween.XML" />

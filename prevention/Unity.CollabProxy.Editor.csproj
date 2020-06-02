@@ -50,9 +50,6 @@
     <Reference Include="UnityEditor.UI">
       <HintPath>Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -257,20 +254,14 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.Advertisements">
-      <HintPath>C:/projects/prevention/git/prevention/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
+    <Reference Include="DOTween">
+      <HintPath>Assets/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/projects/prevention/git/prevention/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
+    <Reference Include="DOTweenEditor">
+      <HintPath>Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/projects/prevention/git/prevention/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/projects/prevention/git/prevention/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.Purchasing">
-      <HintPath>C:/projects/prevention/git/prevention/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
+    <Reference Include="NSubstitute">
+      <HintPath>C:/projects/prevention/git/prevention/Library/PackageCache/com.unity.2d.common@1.2.0-preview.1/Tests/Editor/Lib/NSubstitute/NSubstitute.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>C:/projects/prevention/git/prevention/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
@@ -660,6 +651,44 @@
     <Compile Include="Packages\com.unity.collab-proxy\Editor\Collab\Views\StatusView.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Demigiant\DOTween\DOTween.XML" />
+    <None Include="Assets\Demigiant\DOTween\Editor\DOTweenEditor.XML" />
+    <None Include="Assets\Demigiant\DOTween\readme.txt" />
+    <None Include="Packages\com.unity.2d.animation\Editor\LayoutOverlay\Resources\LayoutOverlay.uxml" />
+    <None Include="Packages\com.unity.2d.animation\Editor\LayoutOverlay\Resources\LayoutOverlayStyle.uss" />
+    <None Include="Packages\com.unity.2d.animation\Editor\LayoutOverlay\Resources\ScrollableToolbar.uss" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\BoneInspectorPanel.uxml" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\BoneInspectorPanelStyle.uss" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\BoneReparentStyle.uss" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\BoneReparentWindow.uxml" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\BoneToolbar.uxml" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\BoneToolbarStyle.uss" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\CopyToolbar.uxml" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\CopyToolbarStyle.uss" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\GenerateGeometryPanel.uxml" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\GenerateGeometryPanelStyle.uss" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\GenerateWeightsPanel.uxml" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\GenerateWeightsPanelStyle.uss" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\MeshToolbar.uxml" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\MeshToolbarStyle.uss" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\PastePanel.uxml" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\PastePanelStyle.uss" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\SkinningModule-GUITextureClip.shader" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\SpriteBitMask.shader" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\SpriteBoneInfluenceListWidget.uxml" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\SpriteBoneInfluenceListWidgetStyle.uss" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\SpriteBoneInfluenceWindow.uxml" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\SpriteBoneInfluenceWindowStyle.uss" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\SpriteOutline.shader" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\ToolbarStyle.uss" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\VisibilityTool.uss" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\VisibilityToolWindow.uxml" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\VisibilityToolbar.uxml" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\WeightInspectorIMGUIPanelStyle.uss" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\WeightPainterPanel.uxml" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\WeightPainterPanelStyle.uss" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\WeightToolbar.uxml" />
+    <None Include="Packages\com.unity.2d.animation\Editor\SkinningModule\Resources\WeightToolbarStyle.uss" />
     <None Include="Packages\com.unity.2d.sprite\Editor\UI\SpriteEditor\PolygonChangeShapeWindow.uxml" />
     <None Include="Packages\com.unity.2d.sprite\Editor\UI\SpriteEditor\SpriteEditor.uss" />
     <None Include="Packages\com.unity.2d.sprite\Editor\UI\SpriteEditor\SpriteFrameModuleInspector.uxml" />

@@ -9,11 +9,13 @@ public class UserData : MonoBehaviour
     public List<float> thisLevelscores;
     public int levelUnlocked;
     public float newScore;
+    public float totalProgress;
 
     private void Start()
-    {
+    {        
         Events.OnGameDone += OnGameDone;
         LoadScores();
+        totalProgress = GetTrophyProgress();
     }
     private void OnDestroy()
     {
@@ -86,5 +88,21 @@ public class UserData : MonoBehaviour
             total += f;
         }
         return total / thisLevelscores.Count;
+    }
+    public float GetTrophyProgress()
+    {
+        float totalProgress = 0;
+        foreach (LevelData levelData in Data.Instance.userData.levelsData)
+        {
+            totalProgress += (float)levelData.stars / 3;
+        }
+        print("totalProgress:" + totalProgress);
+        totalProgress /= 5;
+        print("totalProgress by level:" + totalProgress);
+        return totalProgress;
+    }
+    public void SetNewTotalProgress(float totalProgress)
+    {
+        this.totalProgress = totalProgress;
     }
 }

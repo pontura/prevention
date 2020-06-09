@@ -12,28 +12,20 @@ public class LevelSelector : MonoBehaviour
     void Start()
     {
         int id = 0;
-        float totalProgress = 0;
-        foreach(LevelButton levelButton in buttons)
+        
+        foreach (LevelButton levelButton in buttons)
         {
             LevelData levelData = Data.Instance.userData.levelsData[id];
             levelButton.Init(levelData);
-            print(id + " levelData.stars:" + levelData.stars);
-            totalProgress += (float)levelData.stars/3;
             id++;
         }
-        print("totalProgress:" + totalProgress);
-        totalProgress /= 5;
-        print("totalProgress by level:" + totalProgress);
+        float totalProgress = Data.Instance.userData.GetTrophyProgress();
         tropheoBar.fillAmount = totalProgress;
 
         if (totalProgress > 0.95f)
-        {
             tropheoDone.SetActive(true);
-        }
         else
-        {
             tropheoDone.SetActive(false);
-        }
     }
     public void OpenLevel(int levelID)
     {

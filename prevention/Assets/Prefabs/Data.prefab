@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 081ad409aa2586a47b8c6f21abb64323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelID: 5
+  levelID: 4
   levelsData:
   - id: 1
     stars: 0
@@ -382,18 +382,18 @@ MonoBehaviour:
   - id: 3
     stars: 0
     score: 0
-    scoreForStar_1: 0.25
-    scoreForStar_2: 0.36
+    scoreForStar_1: 0.21
+    scoreForStar_2: 0.34
   - id: 4
     stars: 0
     score: 0
-    scoreForStar_1: 0.22
-    scoreForStar_2: 0.35
+    scoreForStar_1: 0.25
+    scoreForStar_2: 0.42
   - id: 5
     stars: 0
     score: 0
-    scoreForStar_1: 0.2
-    scoreForStar_2: 0.4
+    scoreForStar_1: 0.18
+    scoreForStar_2: 0.41
   thisLevelscores: []
   levelUnlocked: 0
   newScore: 0

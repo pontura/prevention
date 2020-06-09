@@ -97,7 +97,7 @@ public class ItemsListDestroyer : MonoBehaviour
                 case 2:
                     prob = 60; break;
                 case 3:
-                    prob = 70; break;
+                    prob = 65; break;
                 case 4:
                     prob = 82; break;
                 case 5:

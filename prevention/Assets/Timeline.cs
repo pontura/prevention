@@ -8,19 +8,23 @@ public class Timeline : MonoBehaviour
     public GameObject panel;
     public Image bar;
     bool isOn;
+    bool isReadyToStart;
     float value;
     float totalTime;
 
     void Start()
     {
+        bar.fillAmount = 1;
         Events.OnTimeInit += OnTimeInit;
         Events.OnGameDone += OnGameDone;
+        Events.OnStartTimer += OnStartTimer;
         panel.SetActive(false);
     }
     void OnDestroy()
     {
         Events.OnTimeInit -= OnTimeInit;
         Events.OnGameDone -= OnGameDone;
+        Events.OnStartTimer -= OnStartTimer;
     }
     void OnGameDone()
     {
@@ -28,11 +32,17 @@ public class Timeline : MonoBehaviour
     }
     void OnTimeInit(float _totalTime)
     {
+        isReadyToStart = true;
         print("init time: " + _totalTime);
         panel.SetActive(true);
         value = 0;
-        isOn = true;
+        bar.fillAmount = 1;
         totalTime = _totalTime;
+    }
+    void OnStartTimer()
+    {
+        if(isReadyToStart)
+            isOn = true;
     }
     private void Update()
     {
@@ -50,6 +60,7 @@ public class Timeline : MonoBehaviour
     }
     private void Reset()
     {
+        isReadyToStart = false;
         panel.SetActive(false);
         isOn = false;
     }

@@ -59,7 +59,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -145,6 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   directionAsset: {fileID: 7837475229137480273}
+  buttonImage: {fileID: 9059576577738216217}
 --- !u!114 &881534174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,7 +201,7 @@ RectTransform:
   m_GameObject: {fileID: 6375729169573937199}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 3161292108044637242}
   m_RootOrder: 2
@@ -305,7 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

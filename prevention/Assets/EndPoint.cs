@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EndPoint : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class EndPoint : MonoBehaviour
     int num;
     SlliderPointByPoint slider;
     public GameObject directionAsset;
+    public Image buttonImage;
 
     void Start()
     {
@@ -25,20 +27,24 @@ public class EndPoint : MonoBehaviour
         else
             directionAsset.transform.localEulerAngles = new Vector3(0, 0, 180);
     }
+    
     public void Init(SlliderPointByPoint slider, int id)
     {        
         this.id = id;
         this.slider = slider;
         anim = GetComponent<Animation>();
         SetState(false);
+
     }
     public void SetOver()
     {
-        if(slider != null)
+        Events.OnStartTimer();
+        if (slider != null)
             slider.SetOver(this);
     }
     public void SetState(bool isActive)
     {
+        buttonImage.raycastTarget = isActive;
         if (isActive)
             anim.Play("end");
         else

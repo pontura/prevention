@@ -27,5 +27,7 @@ public static class Events {
 
     public static System.Action<bool, float, bool> OnSliderPointByPointProgression = delegate { };
     public static System.Action<bool> OnSliderChangeDirection = delegate { };
+    public static System.Action OnStartTimer = delegate { };
+    
 
 }

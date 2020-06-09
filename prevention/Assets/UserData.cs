@@ -55,11 +55,14 @@ public class UserData : MonoBehaviour
     }
     void OnGameDone()
     {
+        print("OnGameDone");
         float scoreTime = Game.Instance.timeline.GetValue();
         thisLevelscores.Add(scoreTime);
     }
     public void AllLevelComplete()
     {
+        print("AllLevelComplete");
+        OnGameDone();
         newScore = GetAverage();
         if (levelsData[levelID - 1].score < newScore)
             SaveNewHiscore(newScore);
@@ -75,9 +78,13 @@ public class UserData : MonoBehaviour
     }
     float GetAverage()
     {
+        print("Avergao");
         float total = 0;
         foreach (float f in thisLevelscores)
+        {
+            print("Avergao : " + f + " total: " + total);
             total += f;
+        }
         return total / thisLevelscores.Count;
     }
 }

@@ -55,9 +55,13 @@ public class Game : MonoBehaviour
     public void LevelComplete()
     {
         Reset();
-        GetComponent<Summary>().Init();      
+        Invoke("Delayed", 0.1f);     
     }
-    
+    public void Delayed()
+    {
+        GetComponent<Summary>().Init();
+    }
+
     void ItemsListDestroyerDone(ItemsListDestroyer i)
     {
         steps++;

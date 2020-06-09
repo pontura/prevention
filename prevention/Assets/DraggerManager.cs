@@ -16,6 +16,9 @@ public class DraggerManager : MonoBehaviour
     }
     void OnDrag(bool isOn, string itemName)
     {
+        if(isOn)
+            Events.OnStartTimer();
+
         SetPos();
         dragging = isOn;
     }

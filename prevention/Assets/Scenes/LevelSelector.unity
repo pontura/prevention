@@ -680,7 +680,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1641218526}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.33995512
+  m_Size: 0.33995518
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5371,7 +5371,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -9.300018, y: -51.150024}
+  m_AnchoredPosition: {x: -9.300049, y: -51.150024}
   m_SizeDelta: {x: -49.3, y: 102.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1813024841
@@ -5393,7 +5393,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: ccc76e2de2e02324088d2e6355b6c43a, type: 3}
+    m_Font: {fileID: 12800000, guid: 96a37a6d9d6381a499951879c3acab75, type: 3}
     m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
@@ -5407,7 +5407,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Hand Wash Squad is the result of a collaboration between Martin de Santos
     of Tipitap and Katie Houghton of Planet One Reality\r \r\n\r\nWe teamed up with
-    industry sponsors, GoJo Industries Inc and Gama Healthcare Ltd, to create a mobile
+    industry sponsors, GOJO Industries Inc and Gama Healthcare Ltd, to create a mobile
     game for 4-8 year olds designed to teach them how to wash their hands effectively
     in a fun manner.\r \r\n\r\nHand washing is one of the main lines of defense against
     the spread of infections, both virus and bacteria. Correct hand washing can slow
@@ -5415,14 +5415,14 @@ MonoBehaviour:
     techniques recommended by the World Health Organization and the app has been reviewed
     and is supported by experts including the UK Infection Prevention Society and
     also Tracey Gauci, former Nursing Officer for Communicable Disease Control, Welsh
-    Government and Clinical Director at Gama Healthcare.\r\r\n \r\n\r\n<i>CREDITS</i>\r\r\nExecutive
-    producers\r\r\nMartin de Santos, Tipitap \r\r\nKatie Houghton, Planet One Reality\r
-    \r\n\r\n<i>Industry Sponsors\r\r</i>\r\r\nGoJo Industries Inc\r\r\nGama Healthcare
-    Ltd\r \r\n\r\n<i>Clinical Review\r\r</i>\r\r\nTracey Gauci, Gama Healthcare Ltd\r\r\nInfection
-    Prevention Society (UK)\r\r\n \r\n<i>\rGame Design\r\r</i>\r\r\nMartin de Santos\r\r\nDario
-    Georges\r\r\nAgust\xEDn Pontura\r\r\n \r\n<i>Software Development\r\r</i>\r\r\nAgust\xEDn
-    Pontura\r\r\nJuan Pablo Amato\r \r\n\r\n<i>Art and Character Development\r\r</i>\r\r\nDario
-    Georges\r\n\r \r\r\n<i>Music and Sound Design\r\r</i>\r\r\nJuan Pablo Amato"
+    Government and Clinical Director at Gama Healthcare.\r\r\n \r\n\r\n<b>CREDITS</b>\r\r\n\n<b>Executive
+    producers\r\r</b>\r\r\nMartin de Santos, Tipitap \r\r\nKatie Houghton, Planet
+    One Reality\r \r\n\r\n<b>Industry Sponsors\r\r</b>\r\r\nGOJO Industries Inc\r\r\nGama
+    Healthcare Ltd\r \r\n\r\n<b>Clinical Review\r\r</b>\r\r\nTracey Gauci, Gama Healthcare
+    Ltd\r\r\nInfection Prevention Society (UK)\r\r\n \r\n<b>\rGame Design\r\r</b>\r\r\nMartin
+    de Santos\r\r\nDario Georges\r\r\nAgust\xEDn Pontura\r\r\n \r\n<b>Software Development\r\r</b>\r\r\nAgust\xEDn
+    Pontura\r\r\nJuan Pablo Amato\r \r\n\r\n<b>Art and Character Development\r\r</b>\r\r\nDario
+    Georges\r\n\r \r\r\n<b>Music and Sound Design\r\r</b>\r\r\nJuan Pablo Amato"
 --- !u!222 &1813024842
 CanvasRenderer:
   m_ObjectHideFlags: 0

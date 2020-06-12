@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 2772123144193836150}
   - component: {fileID: 2772123144193836151}
   - component: {fileID: 1970949164}
+  - component: {fileID: 2295246496081764518}
   m_Layer: 5
   m_Name: Data
   m_TagString: Untagged
@@ -330,7 +331,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings: {fileID: 2772123144193836151}
   userData: {fileID: 1970949164}
+  locallizationManager: {fileID: 2295246496081764518}
   fade: {fileID: 1104653723}
+  timesScenesChanged: 0
 --- !u!114 &2772123144193836151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,6 +400,70 @@ MonoBehaviour:
   thisLevelscores: []
   levelUnlocked: 0
   newScore: 0
+  totalProgress: 0
+--- !u!114 &2295246496081764518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2772123144193836108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e1057ddfd0e924babf1ef91cfbd0d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  all:
+  - lang: 10
+    title: Hand Wash Squad
+    action: grab
+  - lang: 34
+    title: "Escuadr\xF3n Manos Limpias"
+    action: arrastrar
+  - lang: 28
+    title: "Esquadr\xE3o M\xE3os Limpas"
+    action: arrastar
+  - lang: 14
+    title: Main Propre Escouade
+    action: grab
+  - lang: 21
+    title: 'Mani Pulite Squadra '
+    action: grab
+  - lang: 15
+    title: Saubere Hand Kader
+    action: grab
+  - lang: 6
+    title: "\u6D17\u624B\u5C0F\u5206\u961F"
+    action: grab
+  - lang: 22
+    title: "\u624B\u6D17\u3044\u968A"
+    action: grab
+  - lang: 1
+    title: "\u0641\u0631\u0642\u0647 \u0627\u0644\u0623\u064A\u062F\u064A \u0627\u0644\u0646\u0638\u064A\u0641\u0629"
+    action: grab
+  - lang: 25
+    title: "Rank\u0173 plovimo komandas"
+    action: grab
+  - lang: 0
+    title: Handewas span
+    action: grab
+  - lang: 17
+    title: "\u05E1\u05D9\u05D9\u05E8\u05EA \u05E8\u05D7\u05D9\u05E6\u05EA \u05D9\u05D3\u05D9\u05D9\u05DD"
+    action: grab
+  - lang: 35
+    title: "Handtv\xE4ttspatrullen"
+    action: grab
+  - lang: 36
+    title: "\u0E21\u0E37\u0E2D \u0E25\u0E49\u0E32\u0E07 \u0E17\u0E2B\u0E32\u0E23\u0E2B\u0E21\u0E39\u0E48\u0E2B\u0E19\u0E36\u0E48\u0E07"
+    action: grab
+  - lang: 13
+    title: "K\xE4sienpesujoukkue"
+    action: grab
+  - lang: 9
+    title: De handenwas ploeg
+    action: grab
+  textAssetFile: {fileID: 0}
+  systemLanguage: 0
 --- !u!1001 &2772123143437813249
 PrefabInstance:
   m_ObjectHideFlags: 0

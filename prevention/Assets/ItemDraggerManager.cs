@@ -54,7 +54,7 @@ public class ItemDraggerManager : MonoBehaviour
             Game.Instance.helperManager.SetOff();
         } else
         {
-            Game.Instance.helperManager.Init(button.gameObject, "DRAG ME!");
+            Game.Instance.helperManager.Init(button.gameObject, Data.Instance.locallizationManager.Translate("action").ToUpper());
         }
         SetState(isOn);
     }

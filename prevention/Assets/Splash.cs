@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Splash : MonoBehaviour
 {
     public GameObject enter;
     public GameObject logo;
+    public Text titleField;
 
     void Start()
     {
+        titleField.text = Data.Instance.locallizationManager.Translate("title");
         logo.SetActive(false);
         Events.PlayMusic("splash");
     }

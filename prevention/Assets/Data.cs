@@ -6,8 +6,10 @@ public class Data : MonoBehaviour {
     static Data mInstance = null;
     public Settings settings;
     public UserData userData;
+    public LocallizationManager locallizationManager;
     public Animation fade;
     string sceneName;
+    public int timesScenesChanged;
 
     public static Data Instance
     {
@@ -34,6 +36,7 @@ public class Data : MonoBehaviour {
     }
 	public void LoadScene(string sceneName)
     {
+        timesScenesChanged++;
         this.sceneName = sceneName;
         StartCoroutine(LoadFade());
     }

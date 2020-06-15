@@ -14190,7 +14190,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &482812216
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18352,6 +18352,7 @@ MonoBehaviour:
   buttonNext: {fileID: 1198550625}
   progress: {fileID: 682126621}
   fullImage: {fileID: 735774039}
+  nextButton: {fileID: 1198550623}
 --- !u!114 &634268591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23342,7 +23343,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1970949164, guid: aafe62aa95b491241a29b48be26678cf, type: 3}
       propertyPath: levelID
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aafe62aa95b491241a29b48be26678cf, type: 3}

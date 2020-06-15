@@ -46,7 +46,7 @@ public class LevelSelector : MonoBehaviour
         float totalProgress = Data.Instance.userData.GetTrophyProgress();
         tropheoBar.fillAmount = totalProgress;
 
-        if (totalProgress > 0.95f)
+        if (totalProgress > 0.8f)
             tropheoDone.SetActive(true);
         else
             tropheoDone.SetActive(false);

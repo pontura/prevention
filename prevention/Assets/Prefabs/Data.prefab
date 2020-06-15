@@ -370,7 +370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 081ad409aa2586a47b8c6f21abb64323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelID: 4
+  levelID: 3
   levelsData:
   - id: 1
     stars: 0
@@ -415,7 +415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   all:
   - lang: 10
-    title: Hand Wash Squad
+    title: 
     action: grab
   - lang: 34
     title: "Escuadr\xF3n Manos Limpias"
@@ -462,8 +462,6 @@ MonoBehaviour:
   - lang: 9
     title: De handenwas ploeg
     action: grab
-  textAssetFile: {fileID: 0}
-  systemLanguage: 0
 --- !u!1001 &2772123143437813249
 PrefabInstance:
   m_ObjectHideFlags: 0

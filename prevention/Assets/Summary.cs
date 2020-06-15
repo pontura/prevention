@@ -13,6 +13,7 @@ public class Summary : MonoBehaviour
     bool isOn;
     public Image fullImage;
     float totalProgress;
+    public GameObject nextButton;
 
     void Start()
     {
@@ -30,6 +31,9 @@ public class Summary : MonoBehaviour
     }
     public void Init()
     {
+        if (Data.Instance.userData.levelID >4)
+            nextButton.SetActive(false);
+
         int s = Data.Instance.userData.GetStars(Data.Instance.userData.newScore, Data.Instance.userData.levelID);
         stars.Init(s);
         scoreField.text = Mathf.Round(Data.Instance.userData.newScore * 100).ToString();
@@ -45,7 +49,7 @@ public class Summary : MonoBehaviour
         progress.fillAmount = Data.Instance.userData.totalProgress;
         Data.Instance.userData.SetNewTotalProgress(totalProgress);
 
-        if (totalProgress > 0.95f)
+        if (totalProgress > 0.8f)
             fullImage.gameObject.SetActive(true);
         else
             fullImage.gameObject.SetActive(false);

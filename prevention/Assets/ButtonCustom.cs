@@ -12,6 +12,10 @@ public class ButtonCustom : MonoBehaviour
     }
     public void OnRelease()
     {
+
+#if UNITY_WEBGL
+        return;
+#endif
         Events.OnDrag(false, buttonName);
     }
 }

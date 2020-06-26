@@ -21,6 +21,7 @@ public class DraggerManager : MonoBehaviour
 
         SetPos();
         dragging = isOn;
+
     }
     private void Update()
     {
